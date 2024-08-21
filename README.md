@@ -99,8 +99,23 @@ Following on supporting `IFormattable`, there is a standard formatting string to
 The inverse of formatting: parsing a string into an instance of `Money` and related `Currency`. No interface provides `Parse()` and (in 2.0 and on) `TryParse()`, but they are found as static methods on the BCL's primitive types. Seeing as we'd like to make our `Money` type as similar to BCL primitive types as we can, in order to create the illusion that it is part of the BCL, implementing these two methods becomes part of our job.
 
 ## Source Update History & Notes
-* 2024-08-19: @VRDate Updated the project to VS2022, Created README.md from
-  [codekaizen](https://www.codeproject.com/script/Membership/View.aspx?mid=91332) [A Money type for the CLR](https://www.codeproject.com/Articles/28244/A-Money-type-for-the-CLR), renamed Classes, Added ReginalInfo Maps, Expose read only lookup maps, updated Unit Tests, moved `USD` as first `CurrencyEntry` to default for `$`
+* 2024-08-21 @VRDate
+1. Get latest Currencies from [www.six-group.com](https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml)
+2. Use \XML\list-one.xml with \XML\Currencies.xslt to generate \XML\Currencies.xml grouping duplicates
+3. Use \XML\Currencies.xml with \XML\Currency.xslt to generate \Money\Currency.cs code
+4. Move `USD` as first `Currency` to default for `$`
+5. Move `JPY` as first `Currency` to default for `¥`
+6. Refactored Currency.cs merged CurrencyInfo into Currency added isFund property
+7. Updated Money.cs & Currency.cs parsing logic with regex and Updated Unit Tests
+* 2024-08-19: @VRDate 
+1. Updated to C# .NET v4.72 VS2022 & Jetbrains Rider 2024.2
+2. Created README.md from
+  [codekaizen](https://www.codeproject.com/script/Membership/View.aspx?mid=91332) [A Money type for the CLR](https://www.codeproject.com/Articles/28244/A-Money-type-for-the-CLR)
+3. Renamed Currency internal
+4. Added `ReginalInfo` Maps by `IsoCurrencySymbol`
+5. Exposed read only lookup maps
+6. Updated Unit Tests
+7. Moved `USD` as first `Currency` to default for `$`
 * 2013-03-18: [Download soure code - 137.96 KB](https://www.codeproject.com/KB/recipes/MoneyTypeForCLR/MoneyType.zip) Updated the project to VS2012, implemented rounding on `Money`, implemented IComparible on `Money`, added `Money` extension methods to distribute without needing to create a `MoneyDistributor` instance, added TryParse static method on `Money` and `Currency`, added debugger visualization to `Money`
 * 2008-08-01: Source updated
 * 2008-07-30: First version.

@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using Xunit;
 
@@ -333,7 +334,7 @@ namespace System.Tests
         {
             var previousCulture = Thread.CurrentThread.CurrentCulture;
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            var money = new Money(100.125M, Currency.Usd);
+            var money = new Money(100.125M, Currency.USD);
             var formattedMoney = money.ToString();
             Assert.Equal("$100.13", formattedMoney);
             Thread.CurrentThread.CurrentCulture = previousCulture;
@@ -342,8 +343,8 @@ namespace System.Tests
         [Fact]
         public void MoneyOperationsInvolvingDifferentCurrencyAllFail()
         {
-            var money1 = new Money(101.5M, Currency.Aud);
-            var money2 = new Money(98.5M, Currency.Cad);
+            var money1 = new Money(101.5M, Currency.AUD);
+            var money2 = new Money(98.5M, Currency.CAD);
             Money m;
             bool b;
 
@@ -358,29 +359,116 @@ namespace System.Tests
         }
 
         [Fact]
-        public void MoneyTryParseIsCorrect()
+        public void MoneyTryParseByIsoCurrencySymbolsIsCorrect()
         {
-            var symbolUsd = "$ 123.45";
-            var expectedUsd = new Money(123.45M, Currency.Usd);
-            AssertTryParse(symbolUsd, expectedUsd);
+            foreach (var expectedCurrency in Currency.CurrencyByIsoCurrencySymbol.Values)
+            {
+                AssertTryParse($"{expectedCurrency.IsoCurrencySymbol} 123.45", new Money(123.45M, expectedCurrency));
+            }
+        }
 
-            var usd = "USD 123.45";
-            AssertTryParse(usd, expectedUsd);
+        [Fact]
+        public void MoneyTryParseByIsoCurrencySymbolsWithoutSpaceIsCorrect()
+        {
+            foreach (var expectedCurrency in Currency.CurrencyByIsoCurrencySymbol.Values)
+            {
+                AssertTryParse($"{expectedCurrency.IsoCurrencySymbol}123.45", new Money(123.45M, expectedCurrency));
+            }
+        }
 
-            var gbpSymbol = "£ 123.45";
-            var expectedGbp = new Money(123.45M, Currency.Gbp);
-            AssertTryParse(gbpSymbol, expectedGbp);
+        [Fact]
+        public void MoneyTryParseBySomeCurrencySymbolIsCorrect()
+        {
+            AssertTryParse($"{Currency.USD.CurrencySymbol} 123.45", new Money(123.45M, Currency.USD));
 
-            var cad = "CAD 123.45";
-            var expectedCad = new Money(123.45M, Currency.Cad);
-            AssertTryParse(cad, expectedCad);
+            AssertTryParse($"{Currency.EUR.CurrencySymbol} 123.45", new Money(123.45M, Currency.EUR));
 
-            var ils = "ILS 123.45";
-            var expectedIls = new Money(123.45M, Currency.Ils);
-            AssertTryParse(ils, expectedIls);
+            AssertTryParse($"{Currency.JPY.CurrencySymbol} 123.45", new Money(123.45M, Currency.JPY));
 
-            var ilsSymbol = "\u20aa 123.45";
-            AssertTryParse(ilsSymbol, expectedIls);
+            AssertTryParse($"{Currency.GBP.CurrencySymbol} 123.45", new Money(123.45M, Currency.GBP));
+
+            AssertTryParse($"{Currency.CHF.CurrencySymbol} 123.45", new Money(123.45M, Currency.CHF));
+
+            AssertTryParse($"{Currency.ZAR.CurrencySymbol} 123.45", new Money(123.45M, Currency.ZAR));
+
+            AssertTryParse($"{Currency.KWD.CurrencySymbol} 123.45", new Money(123.45M, Currency.KWD));
+
+            AssertTryParse($"{Currency.ILS.CurrencySymbol} 123.45", new Money(123.45M, Currency.ILS));
+        }
+
+
+        [Fact]
+        public void MoneyTryParseByCurrencySymbolIsCorrect()
+        {
+            int withoutCurrencySymbol = 0;
+            List<Exception> exceptions = new List<Exception>();
+            foreach (var expectedCurrency in Currency.CurrencyByIsoCurrencySymbol.Values)
+            {
+                try
+                {
+                    if (expectedCurrency.CurrencySymbol == null)
+                    {
+                        withoutCurrencySymbol++;
+                        continue;
+                    }
+
+                    AssertTryParse($"{expectedCurrency.CurrencySymbol} 123.45",
+                        new Money(123.45M, expectedCurrency));
+                }
+                catch (Exception e)
+                {
+                    exceptions.Add(e);
+                }
+            }
+
+            var exceptionsCount = exceptions.Count;
+            var currencyCount = Currency.CurrencyByIsoCurrencySymbol.Values.Count;
+            var present = 100 - (float)exceptionsCount / currencyCount * 100;
+            Console.WriteLine(
+                $"{exceptionsCount}/{currencyCount} {present}% parsed {withoutCurrencySymbol} without CurrencySymbols {exceptionsCount} CurrencySymbols are shared with other IsoCurrencySymbols");
+            Assert.True(currencyCount > exceptionsCount);
+            Assert.Equal(25, exceptionsCount);
+            foreach (var exception in exceptions)
+            {
+                Console.WriteLine(exception);
+            }
+        }
+
+        [Fact]
+        public void MoneyTryParseByCurrencySymbolWithoutSpaceIsCorrect()
+        {
+            int withoutCurrencySymbol = 0;
+            List<Exception> exceptions = new List<Exception>();
+            foreach (var expectedCurrency in Currency.CurrencyByIsoCurrencySymbol.Values)
+            {
+                try
+                {
+                    if (expectedCurrency.CurrencySymbol == null)
+                    {
+                        withoutCurrencySymbol++;
+                        continue;
+                    }
+
+                    AssertTryParse($"{expectedCurrency.CurrencySymbol}123.45",
+                        new Money(123.45M, expectedCurrency));
+                }
+                catch (Exception e)
+                {
+                    exceptions.Add(e);
+                }
+            }
+
+            var exceptionsCount = exceptions.Count;
+            var currencyCount = Currency.CurrencyByIsoCurrencySymbol.Values.Count;
+            var present = 100 - (float)exceptionsCount / currencyCount * 100;
+            Console.WriteLine(
+                $"{exceptionsCount}/{currencyCount} {present}% parsed {withoutCurrencySymbol} without CurrencySymbols {exceptionsCount} CurrencySymbols are shared with other IsoCurrencySymbols");
+            Assert.True(currencyCount > exceptionsCount);
+            Assert.Equal(25, exceptionsCount);
+            foreach (var exception in exceptions)
+            {
+                Console.WriteLine(exception);
+            }
         }
 
         private static void AssertTryParse(string @string, Money expected)
@@ -388,7 +476,7 @@ namespace System.Tests
             bool result;
             Money actual;
             result = Money.TryParse(@string, out actual);
-            Assert.True(result);
+            Assert.True(result, @string);
             Assert.Equal(expected, actual);
         }
     }

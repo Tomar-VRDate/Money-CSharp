@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace System
 {
@@ -30,7 +31,7 @@ namespace System
         private const decimal FractionScale = 1E9M;
 
         /// <summary>
-        ///     The <see cref="Core.Money.Currency" /> this amount represents money in.
+        ///     The <see cref="System.Currency" /> this amount represents money in.
         /// </summary>
         private readonly Currency? _currency;
 
@@ -102,7 +103,7 @@ namespace System
         }
 
         /// <summary>
-        ///     Gets the <see cref="Core.Money.Currency" /> which this money value is specified in.
+        ///     Gets the <see cref="System.Currency" /> which this money value is specified in.
         /// </summary>
         public Currency Currency => _currency.GetValueOrDefault(Currency.FromCurrentCulture());
 
@@ -439,20 +440,57 @@ namespace System
             Currency? currency = null;
             Currency currencyValue;
 
-            // Check for currency symbol (e.g. $, £)
-            if (!Currency.TryParse(s.Substring(0, 1), out currencyValue))
+            if (s.Length > 1 && s.Contains(" "))
             {
-                // Check for currency ISO code (e.g. USD, GBP)
-                if (s.Length > 2 && Currency.TryParse(s.Substring(0, 3), out currencyValue))
+                var strings = s.Split(' ');
+                var currencyString = strings[0].Trim();
+                var valueString = strings[1].Trim();
+                if (Currency.TryParse(currencyString, out currencyValue))
                 {
-                    s = s.Substring(3);
+                    s = valueString;
                     currency = currencyValue;
                 }
             }
             else
             {
-                s = s.Substring(1);
-                currency = currencyValue;
+                // Regex pattern to capture the currency symbol or ISO code and the amount
+                // Here’s what this pattern does:
+                // ^ asserts the start of the line.
+                // ([^\d]+) is a capturing group that matches one or more characters that are not digits.
+                // (\d+(?:\.\d+)?) is a capturing group that matches one or more digits, optionally followed by a period . and one or more digits (the decimal part).
+                // $ asserts the end of the line.
+                // The ?: inside the second group makes it a non-capturing group, meaning it won’t be captured for back-referencing. This is useful if you only want to capture the whole number part as a single group.
+                string pattern = @"^([^\d]+)(\d+(?:\.\d+)?)$";
+                var match = Regex.Match(s, pattern);
+
+                if (match.Success)
+                {
+                    var currencyString =match.Groups[1].Value.Trim();
+                    var valueString = match.Groups[2].Value.Trim();
+                    if (Currency.TryParse(currencyString, out currencyValue))
+                    {
+                        s = valueString;
+                        currency = currencyValue;
+                    }
+                }
+                else
+                {
+                    // Check for currency symbol (e.g. $, £)
+                    if (!Currency.TryParse(s.Substring(0, 1), out currencyValue))
+                    {
+                        // Check for currency ISO code (e.g. USD, GBP)
+                        if (s.Length > 2 && Currency.TryParse(s.Substring(0, 3), out currencyValue))
+                        {
+                            s = s.Substring(3);
+                            currency = currencyValue;
+                        }
+                    }
+                    else
+                    {
+                        s = s.Substring(1);
+                        currency = currencyValue;
+                    }    
+                }
             }
 
             decimal value;
@@ -773,7 +811,7 @@ namespace System
             return ToString() +
                    string.Format(" ({0} {1})",
                        ToDecimal(CultureInfo.CurrentCulture),
-                       Currency == Currency.None ? "<Unspecified Currency>" : Currency.CurrencyName);
+                       Currency == Currency.None ? "<Unspecified Currency>" : Currency.ToString());
         }
     }
 }

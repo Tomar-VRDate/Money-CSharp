@@ -2,875 +2,24 @@
 using System.Globalization;
 using System.Threading;
 
+// ReSharper disable InconsistentNaming
+
 namespace System
 {
     /// <summary>
     ///     Represents a system of money within which <see cref="Money" />
     ///     amounts can be compared and arithmetic can be performed.
+    ///     Updated on 2024-08-21
+    ///     from https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml
     /// </summary>
     [Serializable]
     public struct Currency : IEquatable<Currency>, IFormatProvider
     {
-        #region Static Currency Fields
-
-        public static readonly Currency None = new Currency(0);
-
-        /// <summary>
-        ///     Lek
-        /// </summary>
-        public static readonly Currency All;
-
-        /// <summary>
-        ///     Algerian Dinar
-        /// </summary>
-        public static readonly Currency Dzd;
-
-        /// <summary>
-        ///     Argentine Peso
-        /// </summary>
-        public static readonly Currency Ars;
-
-        /// <summary>
-        ///     Australian Dollar
-        /// </summary>
-        public static readonly Currency Aud;
-
-        /// <summary>
-        ///     Bahamian Dollar
-        /// </summary>
-        public static readonly Currency Bsd;
-
-        /// <summary>
-        ///     Bahraini Dinar
-        /// </summary>
-        public static readonly Currency Bhd;
-
-        /// <summary>
-        ///     Taka
-        /// </summary>
-        public static readonly Currency Bdt;
-
-        /// <summary>
-        ///     Armenian Dram
-        /// </summary>
-        public static readonly Currency Amd;
-
-        /// <summary>
-        ///     Barbados Dollar
-        /// </summary>
-        public static readonly Currency Bbd;
-
-        /// <summary>
-        ///     Bermudian Dollar
-        ///     (customarily known as
-        ///     Bermuda Dollar)
-        /// </summary>
-        public static readonly Currency Bmd;
-
-        /// <summary>
-        ///     Boliviano
-        /// </summary>
-        public static readonly Currency Bob;
-
-        /// <summary>
-        ///     Pula
-        /// </summary>
-        public static readonly Currency Bwp;
-
-        /// <summary>
-        ///     Belize Dollar
-        /// </summary>
-        public static readonly Currency Bzd;
-
-        /// <summary>
-        ///     Solomon Islands Dollar
-        /// </summary>
-        public static readonly Currency Sbd;
-
-        /// <summary>
-        ///     Brunei Dollar
-        /// </summary>
-        public static readonly Currency Bnd;
-
-        /// <summary>
-        ///     Kyat
-        /// </summary>
-        public static readonly Currency Mmk;
-
-        /// <summary>
-        ///     Burundi Franc
-        /// </summary>
-        public static readonly Currency Bif;
-
-        /// <summary>
-        ///     Riel
-        /// </summary>
-        public static readonly Currency Khr;
-
-        /// <summary>
-        ///     Canadian Dollar
-        /// </summary>
-        public static readonly Currency Cad;
-
-        /// <summary>
-        ///     Cape Verde Escudo
-        /// </summary>
-        public static readonly Currency Cve;
-
-        /// <summary>
-        ///     Cayman Islands Dollar
-        /// </summary>
-        public static readonly Currency Kyd;
-
-        /// <summary>
-        ///     Sri Lanka Rupee
-        /// </summary>
-        public static readonly Currency Lkr;
-
-        /// <summary>
-        ///     Chilean Peso
-        /// </summary>
-        public static readonly Currency Clp;
-
-        /// <summary>
-        ///     Yuan Renminbi
-        /// </summary>
-        public static readonly Currency Cny;
-
-        /// <summary>
-        ///     Colombian Peso
-        /// </summary>
-        public static readonly Currency Cop;
-
-        /// <summary>
-        ///     Comoro Franc
-        /// </summary>
-        public static readonly Currency Kmf;
-
-        /// <summary>
-        ///     Costa Rican Colon
-        /// </summary>
-        public static readonly Currency Crc;
-
-        /// <summary>
-        ///     Croatian Kuna
-        /// </summary>
-        public static readonly Currency Hrk;
-
-        /// <summary>
-        ///     Cuban Peso
-        /// </summary>
-        public static readonly Currency Cup;
-
-        /// <summary>
-        ///     Czech Koruna
-        /// </summary>
-        public static readonly Currency Czk;
-
-        /// <summary>
-        ///     Danish Krone
-        /// </summary>
-        public static readonly Currency Dkk;
-
-        /// <summary>
-        ///     Dominican Peso
-        /// </summary>
-        public static readonly Currency Dop;
-
-        /// <summary>
-        ///     El Salvador Colon
-        /// </summary>
-        public static readonly Currency Svc;
-
-        /// <summary>
-        ///     Ethiopian Birr
-        /// </summary>
-        public static readonly Currency Etb;
-
-        /// <summary>
-        ///     Nakfa
-        /// </summary>
-        public static readonly Currency Ern;
-
-        /// <summary>
-        ///     Kroon
-        /// </summary>
-        public static readonly Currency Eek;
-
-        /// <summary>
-        ///     Falkland Islands Pound
-        /// </summary>
-        public static readonly Currency Fkp;
-
-        /// <summary>
-        ///     Fiji Dollar
-        /// </summary>
-        public static readonly Currency Fjd;
-
-        /// <summary>
-        ///     Djibouti Franc
-        /// </summary>
-        public static readonly Currency Djf;
-
-        /// <summary>
-        ///     Dalasi
-        /// </summary>
-        public static readonly Currency Gmd;
-
-        /// <summary>
-        ///     Gibraltar Pound
-        /// </summary>
-        public static readonly Currency Gip;
-
-        /// <summary>
-        ///     Quetzal
-        /// </summary>
-        public static readonly Currency Gtq;
-
-        /// <summary>
-        ///     Guinea Franc
-        /// </summary>
-        public static readonly Currency Gnf;
-
-        /// <summary>
-        ///     Guyana Dollar
-        /// </summary>
-        public static readonly Currency Gyd;
-
-        /// <summary>
-        ///     Gourde
-        /// </summary>
-        public static readonly Currency Htg;
-
-        /// <summary>
-        ///     Lempira
-        /// </summary>
-        public static readonly Currency Hnl;
-
-        /// <summary>
-        ///     Hong Kong Dollar
-        /// </summary>
-        public static readonly Currency Hkd;
-
-        /// <summary>
-        ///     Forint
-        /// </summary>
-        public static readonly Currency Huf;
-
-        /// <summary>
-        ///     Iceland Krona
-        /// </summary>
-        public static readonly Currency Isk;
-
-        /// <summary>
-        ///     Indian Rupee
-        /// </summary>
-        public static readonly Currency Inr;
-
-        /// <summary>
-        ///     Rupiah
-        /// </summary>
-        public static readonly Currency Idr;
-
-        /// <summary>
-        ///     Iranian Rial
-        /// </summary>
-        public static readonly Currency Irr;
-
-        /// <summary>
-        ///     Iraqi Dinar
-        /// </summary>
-        public static readonly Currency Iqd;
-
-        /// <summary>
-        ///     New Israeli Sheqel
-        /// </summary>
-        public static readonly Currency Ils;
-
-        /// <summary>
-        ///     Jamaican Dollar
-        /// </summary>
-        public static readonly Currency Jmd;
-
-        /// <summary>
-        ///     Yen
-        /// </summary>
-        public static readonly Currency Jpy;
-
-        /// <summary>
-        ///     Tenge
-        /// </summary>
-        public static readonly Currency Kzt;
-
-        /// <summary>
-        ///     Jordanian Dinar
-        /// </summary>
-        public static readonly Currency Jod;
-
-        /// <summary>
-        ///     Kenyan Shilling
-        /// </summary>
-        public static readonly Currency Kes;
-
-        /// <summary>
-        ///     North Korean Won
-        /// </summary>
-        public static readonly Currency Kpw;
-
-        /// <summary>
-        ///     Won
-        /// </summary>
-        public static readonly Currency Krw;
-
-        /// <summary>
-        ///     Kuwaiti Dinar
-        /// </summary>
-        public static readonly Currency Kwd;
-
-        /// <summary>
-        ///     Som
-        /// </summary>
-        public static readonly Currency Kgs;
-
-        /// <summary>
-        ///     Kip
-        /// </summary>
-        public static readonly Currency Lak;
-
-        /// <summary>
-        ///     Lebanese Pound
-        /// </summary>
-        public static readonly Currency Lbp;
-
-        /// <summary>
-        ///     Latvian Lats
-        /// </summary>
-        public static readonly Currency Lvl;
-
-        /// <summary>
-        ///     Liberian Dollar
-        /// </summary>
-        public static readonly Currency Lrd;
-
-        /// <summary>
-        ///     Libyan Dinar
-        /// </summary>
-        public static readonly Currency Lyd;
-
-        /// <summary>
-        ///     Lithuanian Litas
-        /// </summary>
-        public static readonly Currency Ltl;
-
-        /// <summary>
-        ///     Pataca
-        /// </summary>
-        public static readonly Currency Mop;
-
-        /// <summary>
-        ///     Kwacha
-        /// </summary>
-        public static readonly Currency Mwk;
-
-        /// <summary>
-        ///     Malaysian Ringgit
-        /// </summary>
-        public static readonly Currency Myr;
-
-        /// <summary>
-        ///     Rufiyaa
-        /// </summary>
-        public static readonly Currency Mvr;
-
-        /// <summary>
-        ///     Ouguiya
-        /// </summary>
-        public static readonly Currency Mro;
-
-        /// <summary>
-        ///     Mauritius Rupee
-        /// </summary>
-        public static readonly Currency Mur;
-
-        /// <summary>
-        ///     Mexican Peso
-        /// </summary>
-        public static readonly Currency Mxn;
-
-        /// <summary>
-        ///     Tugrik
-        /// </summary>
-        public static readonly Currency Mnt;
-
-        /// <summary>
-        ///     Moldovan Leu
-        /// </summary>
-        public static readonly Currency Mdl;
-
-        /// <summary>
-        ///     Moroccan Dirham
-        /// </summary>
-        public static readonly Currency Mad;
-
-        /// <summary>
-        ///     Rial Omani
-        /// </summary>
-        public static readonly Currency Omr;
-
-        /// <summary>
-        ///     Nepalese Rupee
-        /// </summary>
-        public static readonly Currency Npr;
-
-        /// <summary>
-        ///     Netherlands Antillian Guilder
-        /// </summary>
-        public static readonly Currency Ang;
-
-        /// <summary>
-        ///     Aruban Guilder
-        /// </summary>
-        public static readonly Currency Awg;
-
-        /// <summary>
-        ///     Vatu
-        /// </summary>
-        public static readonly Currency Vuv;
-
-        /// <summary>
-        ///     New Zealand Dollar
-        /// </summary>
-        public static readonly Currency Nzd;
-
-        /// <summary>
-        ///     Cordoba Oro
-        /// </summary>
-        public static readonly Currency Nio;
-
-        /// <summary>
-        ///     Naira
-        /// </summary>
-        public static readonly Currency Ngn;
-
-        /// <summary>
-        ///     Norwegian Krone
-        /// </summary>
-        public static readonly Currency Nok;
-
-        /// <summary>
-        ///     Pakistan Rupee
-        /// </summary>
-        public static readonly Currency Pkr;
-
-        /// <summary>
-        ///     Balboa
-        /// </summary>
-        public static readonly Currency Pab;
-
-        /// <summary>
-        ///     Kina
-        /// </summary>
-        public static readonly Currency Pgk;
-
-        /// <summary>
-        ///     Guarani
-        /// </summary>
-        public static readonly Currency Pyg;
-
-        /// <summary>
-        ///     Nuevo Sol
-        /// </summary>
-        public static readonly Currency Pen;
-
-        /// <summary>
-        ///     Philippine Peso
-        /// </summary>
-        public static readonly Currency Php;
-
-        /// <summary>
-        ///     Guinea-Bissau Peso
-        /// </summary>
-        public static readonly Currency Gwp;
-
-        /// <summary>
-        ///     Qatari Rial
-        /// </summary>
-        public static readonly Currency Qar;
-
-        /// <summary>
-        ///     Russian Ruble
-        /// </summary>
-        public static readonly Currency Rub;
-
-        /// <summary>
-        ///     Rwanda Franc
-        /// </summary>
-        public static readonly Currency Rwf;
-
-        /// <summary>
-        ///     Saint Helena Pound
-        /// </summary>
-        public static readonly Currency Shp;
-
-        /// <summary>
-        ///     Dobra
-        /// </summary>
-        public static readonly Currency Std;
-
-        /// <summary>
-        ///     Saudi Riyal
-        /// </summary>
-        public static readonly Currency Sar;
-
-        /// <summary>
-        ///     Seychelles Rupee
-        /// </summary>
-        public static readonly Currency Scr;
-
-        /// <summary>
-        ///     Leone
-        /// </summary>
-        public static readonly Currency Sll;
-
-        /// <summary>
-        ///     Singapore Dollar
-        /// </summary>
-        public static readonly Currency Sgd;
-
-        /// <summary>
-        ///     Slovak Koruna
-        /// </summary>
-        public static readonly Currency Skk;
-
-        /// <summary>
-        ///     Dong
-        /// </summary>
-        public static readonly Currency Vnd;
-
-        /// <summary>
-        ///     Somali Shilling
-        /// </summary>
-        public static readonly Currency Sos;
-
-        /// <summary>
-        ///     Rand
-        /// </summary>
-        public static readonly Currency Zar;
-
-        /// <summary>
-        ///     Zimbabwe Dollar
-        /// </summary>
-        public static readonly Currency Zwd;
-
-        /// <summary>
-        ///     Lilangeni
-        /// </summary>
-        public static readonly Currency Szl;
-
-        /// <summary>
-        ///     Swedish Krona
-        /// </summary>
-        public static readonly Currency Sek;
-
-        /// <summary>
-        ///     Swiss Franc
-        /// </summary>
-        public static readonly Currency Chf;
-
-        /// <summary>
-        ///     Syrian Pound
-        /// </summary>
-        public static readonly Currency Syp;
-
-        /// <summary>
-        ///     Baht
-        /// </summary>
-        public static readonly Currency Thb;
-
-        /// <summary>
-        ///     Pa'anga
-        /// </summary>
-        public static readonly Currency Top;
-
-        /// <summary>
-        ///     Trinidad and Tobago
-        ///     Dollar
-        /// </summary>
-        public static readonly Currency Ttd;
-
-        /// <summary>
-        ///     UAE Dirham
-        /// </summary>
-        public static readonly Currency Aed;
-
-        /// <summary>
-        ///     Tunisian Dinar
-        /// </summary>
-        public static readonly Currency Tnd;
-
-        /// <summary>
-        ///     Manat
-        /// </summary>
-        public static readonly Currency Tmm;
-
-        /// <summary>
-        ///     Uganda Shilling
-        /// </summary>
-        public static readonly Currency Ugx;
-
-        /// <summary>
-        ///     Denar
-        /// </summary>
-        public static readonly Currency Mkd;
-
-        /// <summary>
-        ///     Egyptian Pound
-        /// </summary>
-        public static readonly Currency Egp;
-
-        /// <summary>
-        ///     Pound Sterling
-        /// </summary>
-        public static readonly Currency Gbp;
-
-        /// <summary>
-        ///     Tanzanian Shilling
-        /// </summary>
-        public static readonly Currency Tzs;
-
-        /// <summary>
-        ///     US Dollar
-        /// </summary>
-        public static readonly Currency Usd;
-
-        /// <summary>
-        ///     Peso Uruguayo
-        /// </summary>
-        public static readonly Currency Uyu;
-
-        /// <summary>
-        ///     Uzbekistan Sum
-        /// </summary>
-        public static readonly Currency Uzs;
-
-        /// <summary>
-        ///     Tala
-        /// </summary>
-        public static readonly Currency Wst;
-
-        /// <summary>
-        ///     Yemeni Rial
-        /// </summary>
-        public static readonly Currency Yer;
-
-        /// <summary>
-        ///     Kwacha
-        /// </summary>
-        public static readonly Currency Zmk;
-
-        /// <summary>
-        ///     New Taiwan Dollar
-        /// </summary>
-        public static readonly Currency Twd;
-
-        /// <summary>
-        ///     Ghana Cedi
-        /// </summary>
-        public static readonly Currency Ghs;
-
-        /// <summary>
-        ///     Bolivar Fuerte
-        /// </summary>
-        public static readonly Currency Vef;
-
-        /// <summary>
-        ///     Sudanese Pound
-        /// </summary>
-        public static readonly Currency Sdg;
-
-        /// <summary>
-        ///     Serbian Dinar
-        /// </summary>
-        public static readonly Currency Rsd;
-
-        /// <summary>
-        ///     Metical
-        /// </summary>
-        public static readonly Currency Mzn;
-
-        /// <summary>
-        ///     Azerbaijanian Manat
-        /// </summary>
-        public static readonly Currency Azn;
-
-        /// <summary>
-        ///     New Leu
-        /// </summary>
-        public static readonly Currency Ron;
-
-        /// <summary>
-        ///     New Turkish Lira
-        /// </summary>
-        public static readonly Currency Try;
-
-        /// <summary>
-        ///     CFA Franc BEAC
-        /// </summary>
-        public static readonly Currency Xaf;
-
-        /// <summary>
-        ///     East Caribbean Dollar
-        /// </summary>
-        public static readonly Currency Xcd;
-
-        /// <summary>
-        ///     CFA Franc BCEAO
-        /// </summary>
-        public static readonly Currency Xof;
-
-        /// <summary>
-        ///     CFP Franc
-        /// </summary>
-        public static readonly Currency Xpf;
-
-        /// <summary>
-        ///     Bond Markets Units
-        ///     European Composite Unit
-        ///     (EURCO)
-        /// </summary>
-        public static readonly Currency Xba;
-
-        /// <summary>
-        ///     European Monetary
-        ///     Unit (E.M.U.-6)
-        /// </summary>
-        public static readonly Currency Xbb;
-
-        /// <summary>
-        ///     European Unit of
-        ///     Account 9(E.U.A.-9)
-        /// </summary>
-        public static readonly Currency Xbc;
-
-        /// <summary>
-        ///     European Unit of
-        ///     Account 17(E.U.A.-17)
-        /// </summary>
-        public static readonly Currency Xbd;
-
-        /// <summary>
-        ///     Gold
-        /// </summary>
-        public static readonly Currency Xau;
-
-        /// <summary>
-        ///     SDR
-        /// </summary>
-        public static readonly Currency Xdr;
-
-        /// <summary>
-        ///     Silver
-        /// </summary>
-        public static readonly Currency Xag;
-
-        /// <summary>
-        ///     Platinum
-        /// </summary>
-        public static readonly Currency Xpt;
-
-        /// <summary>
-        ///     Codes specifically
-        ///     reserved for testing
-        ///     purposes
-        /// </summary>
-        public static readonly Currency Xts;
-
-        /// <summary>
-        ///     Palladium
-        /// </summary>
-        public static readonly Currency Xpd;
-
-        /// <summary>
-        ///     Surinam Dollar
-        /// </summary>
-        public static readonly Currency Srd;
-
-        /// <summary>
-        ///     Malagasy Ariary
-        /// </summary>
-        public static readonly Currency Mga;
-
-        /// <summary>
-        ///     Afghani
-        /// </summary>
-        public static readonly Currency Afn;
-
-        /// <summary>
-        ///     Somoni
-        /// </summary>
-        public static readonly Currency Tjs;
-
-        /// <summary>
-        ///     Kwanza
-        /// </summary>
-        public static readonly Currency Aoa;
-
-        /// <summary>
-        ///     Belarussian Ruble
-        /// </summary>
-        public static readonly Currency Byr;
-
-        /// <summary>
-        ///     Bulgarian Lev
-        /// </summary>
-        public static readonly Currency Bgn;
-
-        /// <summary>
-        ///     Franc Congolais
-        /// </summary>
-        public static readonly Currency Cdf;
-
-        /// <summary>
-        ///     Convertible Marks
-        /// </summary>
-        public static readonly Currency Bam;
-
-        /// <summary>
-        ///     Euro
-        /// </summary>
-        public static readonly Currency Eur;
-
-        /// <summary>
-        ///     Hryvnia
-        /// </summary>
-        public static readonly Currency Uah;
-
-        /// <summary>
-        ///     Lari
-        /// </summary>
-        public static readonly Currency Gel;
-
-        /// <summary>
-        ///     Zloty
-        /// </summary>
-        public static readonly Currency Pln;
-
-        /// <summary>
-        ///     Brazilian Real
-        /// </summary>
-        public static readonly Currency Brl;
-
-        /// <summary>
-        ///     The codes assigned for
-        ///     transactions where no
-        ///     currency is involved.
-        /// </summary>
-        public static readonly Currency Xxx;
-
-        #endregion
-
-        public static readonly Dictionary<int, CurrencyInfo> CurrencyInfoByIsoCurrencySymbol
-            = new Dictionary<int, CurrencyInfo>();
+        public static readonly Dictionary<int, Currency> CurrencyByIsoCurrencySymbol
+            = new Dictionary<int, Currency>();
+
+        public static readonly Dictionary<string, Currency> CurrencyByIsoCurrencyCode
+            = new Dictionary<string, Currency>(StringComparer.InvariantCultureIgnoreCase);
 
         public static readonly Dictionary<string, int> IsoCurrencySymbolByIsoCurrencyCode
             = new Dictionary<string, int>(StringComparer.InvariantCultureIgnoreCase);
@@ -884,8 +33,6 @@ namespace System
         public static readonly Dictionary<int, List<int>> LocalCultureIdsByIsoCurrencySymbol
             = new Dictionary<int, List<int>>();
 
-        private readonly int _isoCurrencyCode;
-
         public static readonly Dictionary<string, List<int>> LocalCultureIdsByIsoCurrencyCode =
             new Dictionary<string, List<int>>();
 
@@ -897,6 +44,917 @@ namespace System
 
         public static readonly Dictionary<int, RegionInfo> RegionInfoByLocalCultureId =
             new Dictionary<int, RegionInfo>();
+
+        #region Static Currency Fields
+
+        /// <summary>
+        ///     Currency # 008 - Lek
+        /// </summary>
+        public static readonly Currency ALL;
+
+        /// <summary>
+        ///     Currency # 012 - Algerian Dinar
+        /// </summary>
+        public static readonly Currency DZD;
+
+        /// <summary>
+        ///     Currency # 032 - Argentine Peso
+        /// </summary>
+        public static readonly Currency ARS;
+
+        /// <summary>
+        ///     Currency # 036 - Australian Dollar
+        /// </summary>
+        public static readonly Currency AUD;
+
+        /// <summary>
+        ///     Currency # 044 - Bahamian Dollar
+        /// </summary>
+        public static readonly Currency BSD;
+
+        /// <summary>
+        ///     Currency # 048 - Bahraini Dinar
+        /// </summary>
+        public static readonly Currency BHD;
+
+        /// <summary>
+        ///     Currency # 050 - Taka
+        /// </summary>
+        public static readonly Currency BDT;
+
+        /// <summary>
+        ///     Currency # 051 - Armenian Dram
+        /// </summary>
+        public static readonly Currency AMD;
+
+        /// <summary>
+        ///     Currency # 052 - Barbados Dollar
+        /// </summary>
+        public static readonly Currency BBD;
+
+        /// <summary>
+        ///     Currency # 060 - Bermudian Dollar
+        /// </summary>
+        public static readonly Currency BMD;
+
+        /// <summary>
+        ///     Currency # 064 - Ngultrum
+        /// </summary>
+        public static readonly Currency BTN;
+
+        /// <summary>
+        ///     Currency # 068 - Boliviano
+        /// </summary>
+        public static readonly Currency BOB;
+
+        /// <summary>
+        ///     Currency # 072 - Pula
+        /// </summary>
+        public static readonly Currency BWP;
+
+        /// <summary>
+        ///     Currency # 084 - Belize Dollar
+        /// </summary>
+        public static readonly Currency BZD;
+
+        /// <summary>
+        ///     Currency # 090 - Solomon Islands Dollar
+        /// </summary>
+        public static readonly Currency SBD;
+
+        /// <summary>
+        ///     Currency # 096 - Brunei Dollar
+        /// </summary>
+        public static readonly Currency BND;
+
+        /// <summary>
+        ///     Currency # 104 - Kyat
+        /// </summary>
+        public static readonly Currency MMK;
+
+        /// <summary>
+        ///     Currency # 108 - Burundi Franc
+        /// </summary>
+        public static readonly Currency BIF;
+
+        /// <summary>
+        ///     Currency # 116 - Riel
+        /// </summary>
+        public static readonly Currency KHR;
+
+        /// <summary>
+        ///     Currency # 124 - Canadian Dollar
+        /// </summary>
+        public static readonly Currency CAD;
+
+        /// <summary>
+        ///     Currency # 132 - Cabo Verde Escudo
+        /// </summary>
+        public static readonly Currency CVE;
+
+        /// <summary>
+        ///     Currency # 136 - Cayman Islands Dollar
+        /// </summary>
+        public static readonly Currency KYD;
+
+        /// <summary>
+        ///     Currency # 144 - Sri Lanka Rupee
+        /// </summary>
+        public static readonly Currency LKR;
+
+        /// <summary>
+        ///     Currency # 152 - Chilean Peso
+        /// </summary>
+        public static readonly Currency CLP;
+
+        /// <summary>
+        ///     Currency # 156 - Yuan Renminbi
+        /// </summary>
+        public static readonly Currency CNY;
+
+        /// <summary>
+        ///     Currency # 170 - Colombian Peso
+        /// </summary>
+        public static readonly Currency COP;
+
+        /// <summary>
+        ///     Currency # 174 - Comorian Franc
+        /// </summary>
+        public static readonly Currency KMF;
+
+        /// <summary>
+        ///     Currency # 188 - Costa Rican Colon
+        /// </summary>
+        public static readonly Currency CRC;
+
+        /// <summary>
+        ///     Currency # 192 - Cuban Peso
+        /// </summary>
+        public static readonly Currency CUP;
+
+        /// <summary>
+        ///     Currency # 203 - Czech Koruna
+        /// </summary>
+        public static readonly Currency CZK;
+
+        /// <summary>
+        ///     Currency # 208 - Danish Krone
+        /// </summary>
+        public static readonly Currency DKK;
+
+        /// <summary>
+        ///     Currency # 214 - Dominican Peso
+        /// </summary>
+        public static readonly Currency DOP;
+
+        /// <summary>
+        ///     Currency # 222 - El Salvador Colon
+        /// </summary>
+        public static readonly Currency SVC;
+
+        /// <summary>
+        ///     Currency # 230 - Ethiopian Birr
+        /// </summary>
+        public static readonly Currency ETB;
+
+        /// <summary>
+        ///     Currency # 232 - Nakfa
+        /// </summary>
+        public static readonly Currency ERN;
+
+        /// <summary>
+        ///     Currency # 238 - Falkland Islands Pound
+        /// </summary>
+        public static readonly Currency FKP;
+
+        /// <summary>
+        ///     Currency # 242 - Fiji Dollar
+        /// </summary>
+        public static readonly Currency FJD;
+
+        /// <summary>
+        ///     Currency # 262 - Djibouti Franc
+        /// </summary>
+        public static readonly Currency DJF;
+
+        /// <summary>
+        ///     Currency # 270 - Dalasi
+        /// </summary>
+        public static readonly Currency GMD;
+
+        /// <summary>
+        ///     Currency # 292 - Gibraltar Pound
+        /// </summary>
+        public static readonly Currency GIP;
+
+        /// <summary>
+        ///     Currency # 320 - Quetzal
+        /// </summary>
+        public static readonly Currency GTQ;
+
+        /// <summary>
+        ///     Currency # 324 - Guinean Franc
+        /// </summary>
+        public static readonly Currency GNF;
+
+        /// <summary>
+        ///     Currency # 328 - Guyana Dollar
+        /// </summary>
+        public static readonly Currency GYD;
+
+        /// <summary>
+        ///     Currency # 332 - Gourde
+        /// </summary>
+        public static readonly Currency HTG;
+
+        /// <summary>
+        ///     Currency # 340 - Lempira
+        /// </summary>
+        public static readonly Currency HNL;
+
+        /// <summary>
+        ///     Currency # 344 - Hong Kong Dollar
+        /// </summary>
+        public static readonly Currency HKD;
+
+        /// <summary>
+        ///     Currency # 348 - Forint
+        /// </summary>
+        public static readonly Currency HUF;
+
+        /// <summary>
+        ///     Currency # 352 - Iceland Krona
+        /// </summary>
+        public static readonly Currency ISK;
+
+        /// <summary>
+        ///     Currency # 356 - Indian Rupee
+        /// </summary>
+        public static readonly Currency INR;
+
+        /// <summary>
+        ///     Currency # 360 - Rupiah
+        /// </summary>
+        public static readonly Currency IDR;
+
+        /// <summary>
+        ///     Currency # 364 - Iranian Rial
+        /// </summary>
+        public static readonly Currency IRR;
+
+        /// <summary>
+        ///     Currency # 368 - Iraqi Dinar
+        /// </summary>
+        public static readonly Currency IQD;
+
+        /// <summary>
+        ///     Currency # 376 - New Israeli Sheqel
+        /// </summary>
+        public static readonly Currency ILS;
+
+        /// <summary>
+        ///     Currency # 388 - Jamaican Dollar
+        /// </summary>
+        public static readonly Currency JMD;
+
+        /// <summary>
+        ///     Currency # 392 - Yen
+        /// </summary>
+        public static readonly Currency JPY;
+
+        /// <summary>
+        ///     Currency # 398 - Tenge
+        /// </summary>
+        public static readonly Currency KZT;
+
+        /// <summary>
+        ///     Currency # 400 - Jordanian Dinar
+        /// </summary>
+        public static readonly Currency JOD;
+
+        /// <summary>
+        ///     Currency # 404 - Kenyan Shilling
+        /// </summary>
+        public static readonly Currency KES;
+
+        /// <summary>
+        ///     Currency # 408 - North Korean Won
+        /// </summary>
+        public static readonly Currency KPW;
+
+        /// <summary>
+        ///     Currency # 410 - Won
+        /// </summary>
+        public static readonly Currency KRW;
+
+        /// <summary>
+        ///     Currency # 414 - Kuwaiti Dinar
+        /// </summary>
+        public static readonly Currency KWD;
+
+        /// <summary>
+        ///     Currency # 417 - Som
+        /// </summary>
+        public static readonly Currency KGS;
+
+        /// <summary>
+        ///     Currency # 418 - Lao Kip
+        /// </summary>
+        public static readonly Currency LAK;
+
+        /// <summary>
+        ///     Currency # 422 - Lebanese Pound
+        /// </summary>
+        public static readonly Currency LBP;
+
+        /// <summary>
+        ///     Currency # 426 - Loti
+        /// </summary>
+        public static readonly Currency LSL;
+
+        /// <summary>
+        ///     Currency # 430 - Liberian Dollar
+        /// </summary>
+        public static readonly Currency LRD;
+
+        /// <summary>
+        ///     Currency # 434 - Libyan Dinar
+        /// </summary>
+        public static readonly Currency LYD;
+
+        /// <summary>
+        ///     Currency # 446 - Pataca
+        /// </summary>
+        public static readonly Currency MOP;
+
+        /// <summary>
+        ///     Currency # 454 - Malawi Kwacha
+        /// </summary>
+        public static readonly Currency MWK;
+
+        /// <summary>
+        ///     Currency # 458 - Malaysian Ringgit
+        /// </summary>
+        public static readonly Currency MYR;
+
+        /// <summary>
+        ///     Currency # 462 - Rufiyaa
+        /// </summary>
+        public static readonly Currency MVR;
+
+        /// <summary>
+        ///     Currency # 480 - Mauritius Rupee
+        /// </summary>
+        public static readonly Currency MUR;
+
+        /// <summary>
+        ///     Currency # 484 - Mexican Peso
+        /// </summary>
+        public static readonly Currency MXN;
+
+        /// <summary>
+        ///     Currency # 496 - Tugrik
+        /// </summary>
+        public static readonly Currency MNT;
+
+        /// <summary>
+        ///     Currency # 498 - Moldovan Leu
+        /// </summary>
+        public static readonly Currency MDL;
+
+        /// <summary>
+        ///     Currency # 504 - Moroccan Dirham
+        /// </summary>
+        public static readonly Currency MAD;
+
+        /// <summary>
+        ///     Currency # 512 - Rial Omani
+        /// </summary>
+        public static readonly Currency OMR;
+
+        /// <summary>
+        ///     Currency # 516 - Namibia Dollar
+        /// </summary>
+        public static readonly Currency NAD;
+
+        /// <summary>
+        ///     Currency # 524 - Nepalese Rupee
+        /// </summary>
+        public static readonly Currency NPR;
+
+        /// <summary>
+        ///     Currency # 532 - Netherlands Antillean Guilder
+        /// </summary>
+        public static readonly Currency ANG;
+
+        /// <summary>
+        ///     Currency # 533 - Aruban Florin
+        /// </summary>
+        public static readonly Currency AWG;
+
+        /// <summary>
+        ///     Currency # 548 - Vatu
+        /// </summary>
+        public static readonly Currency VUV;
+
+        /// <summary>
+        ///     Currency # 554 - New Zealand Dollar
+        /// </summary>
+        public static readonly Currency NZD;
+
+        /// <summary>
+        ///     Currency # 558 - Cordoba Oro
+        /// </summary>
+        public static readonly Currency NIO;
+
+        /// <summary>
+        ///     Currency # 566 - Naira
+        /// </summary>
+        public static readonly Currency NGN;
+
+        /// <summary>
+        ///     Currency # 578 - Norwegian Krone
+        /// </summary>
+        public static readonly Currency NOK;
+
+        /// <summary>
+        ///     Currency # 586 - Pakistan Rupee
+        /// </summary>
+        public static readonly Currency PKR;
+
+        /// <summary>
+        ///     Currency # 590 - Balboa
+        /// </summary>
+        public static readonly Currency PAB;
+
+        /// <summary>
+        ///     Currency # 598 - Kina
+        /// </summary>
+        public static readonly Currency PGK;
+
+        /// <summary>
+        ///     Currency # 600 - Guarani
+        /// </summary>
+        public static readonly Currency PYG;
+
+        /// <summary>
+        ///     Currency # 604 - Sol
+        /// </summary>
+        public static readonly Currency PEN;
+
+        /// <summary>
+        ///     Currency # 608 - Philippine Peso
+        /// </summary>
+        public static readonly Currency PHP;
+
+        /// <summary>
+        ///     Currency # 634 - Qatari Rial
+        /// </summary>
+        public static readonly Currency QAR;
+
+        /// <summary>
+        ///     Currency # 643 - Russian Ruble
+        /// </summary>
+        public static readonly Currency RUB;
+
+        /// <summary>
+        ///     Currency # 646 - Rwanda Franc
+        /// </summary>
+        public static readonly Currency RWF;
+
+        /// <summary>
+        ///     Currency # 654 - Saint Helena Pound
+        /// </summary>
+        public static readonly Currency SHP;
+
+        /// <summary>
+        ///     Currency # 682 - Saudi Riyal
+        /// </summary>
+        public static readonly Currency SAR;
+
+        /// <summary>
+        ///     Currency # 690 - Seychelles Rupee
+        /// </summary>
+        public static readonly Currency SCR;
+
+        /// <summary>
+        ///     Currency # 702 - Singapore Dollar
+        /// </summary>
+        public static readonly Currency SGD;
+
+        /// <summary>
+        ///     Currency # 704 - Dong
+        /// </summary>
+        public static readonly Currency VND;
+
+        /// <summary>
+        ///     Currency # 706 - Somali Shilling
+        /// </summary>
+        public static readonly Currency SOS;
+
+        /// <summary>
+        ///     Currency # 710 - Rand
+        /// </summary>
+        public static readonly Currency ZAR;
+
+        /// <summary>
+        ///     Currency # 728 - South Sudanese Pound
+        /// </summary>
+        public static readonly Currency SSP;
+
+        /// <summary>
+        ///     Currency # 748 - Lilangeni
+        /// </summary>
+        public static readonly Currency SZL;
+
+        /// <summary>
+        ///     Currency # 752 - Swedish Krona
+        /// </summary>
+        public static readonly Currency SEK;
+
+        /// <summary>
+        ///     Currency # 756 - Swiss Franc
+        /// </summary>
+        public static readonly Currency CHF;
+
+        /// <summary>
+        ///     Currency # 760 - Syrian Pound
+        /// </summary>
+        public static readonly Currency SYP;
+
+        /// <summary>
+        ///     Currency # 764 - Baht
+        /// </summary>
+        public static readonly Currency THB;
+
+        /// <summary>
+        ///     Currency # 776 - Pa’anga
+        /// </summary>
+        public static readonly Currency TOP;
+
+        /// <summary>
+        ///     Currency # 780 - Trinidad and Tobago Dollar
+        /// </summary>
+        public static readonly Currency TTD;
+
+        /// <summary>
+        ///     Currency # 784 - UAE Dirham
+        /// </summary>
+        public static readonly Currency AED;
+
+        /// <summary>
+        ///     Currency # 788 - Tunisian Dinar
+        /// </summary>
+        public static readonly Currency TND;
+
+        /// <summary>
+        ///     Currency # 800 - Uganda Shilling
+        /// </summary>
+        public static readonly Currency UGX;
+
+        /// <summary>
+        ///     Currency # 807 - Denar
+        /// </summary>
+        public static readonly Currency MKD;
+
+        /// <summary>
+        ///     Currency # 818 - Egyptian Pound
+        /// </summary>
+        public static readonly Currency EGP;
+
+        /// <summary>
+        ///     Currency # 826 - Pound Sterling
+        /// </summary>
+        public static readonly Currency GBP;
+
+        /// <summary>
+        ///     Currency # 834 - Tanzanian Shilling
+        /// </summary>
+        public static readonly Currency TZS;
+
+        /// <summary>
+        ///     Currency # 840 - US Dollar
+        /// </summary>
+        public static readonly Currency USD;
+
+        /// <summary>
+        ///     Currency # 858 - Peso Uruguayo
+        /// </summary>
+        public static readonly Currency UYU;
+
+        /// <summary>
+        ///     Currency # 860 - Uzbekistan Sum
+        /// </summary>
+        public static readonly Currency UZS;
+
+        /// <summary>
+        ///     Currency # 882 - Tala
+        /// </summary>
+        public static readonly Currency WST;
+
+        /// <summary>
+        ///     Currency # 886 - Yemeni Rial
+        /// </summary>
+        public static readonly Currency YER;
+
+        /// <summary>
+        ///     Currency # 901 - New Taiwan Dollar
+        /// </summary>
+        public static readonly Currency TWD;
+
+        /// <summary>
+        ///     Currency # 924 - Zimbabwe Gold
+        /// </summary>
+        public static readonly Currency ZWG;
+
+        /// <summary>
+        ///     Currency # 925 - Leone
+        /// </summary>
+        public static readonly Currency SLE;
+
+        /// <summary>
+        ///     Currency # 926 - Bolívar Soberano
+        /// </summary>
+        public static readonly Currency VED;
+
+        /// <summary>
+        ///     Currency # 927 - Unidad Previsional
+        /// </summary>
+        public static readonly Currency UYW;
+
+        /// <summary>
+        ///     Currency # 928 - Bolívar Soberano
+        /// </summary>
+        public static readonly Currency VES;
+
+        /// <summary>
+        ///     Currency # 929 - Ouguiya
+        /// </summary>
+        public static readonly Currency MRU;
+
+        /// <summary>
+        ///     Currency # 930 - Dobra
+        /// </summary>
+        public static readonly Currency STN;
+
+        /// <summary>
+        ///     Currency # 931 - Peso Convertible
+        /// </summary>
+        public static readonly Currency CUC;
+
+        /// <summary>
+        ///     Currency # 932 - Zimbabwe Dollar
+        /// </summary>
+        public static readonly Currency ZWL;
+
+        /// <summary>
+        ///     Currency # 933 - Belarusian Ruble
+        /// </summary>
+        public static readonly Currency BYN;
+
+        /// <summary>
+        ///     Currency # 934 - Turkmenistan New Manat
+        /// </summary>
+        public static readonly Currency TMT;
+
+        /// <summary>
+        ///     Currency # 936 - Ghana Cedi
+        /// </summary>
+        public static readonly Currency GHS;
+
+        /// <summary>
+        ///     Currency # 938 - Sudanese Pound
+        /// </summary>
+        public static readonly Currency SDG;
+
+        /// <summary>
+        ///     Currency # 940 - Uruguay Peso en Unidades Indexadas (UI) isFund = true
+        /// </summary>
+        public static readonly Currency UYI;
+
+        /// <summary>
+        ///     Currency # 941 - Serbian Dinar
+        /// </summary>
+        public static readonly Currency RSD;
+
+        /// <summary>
+        ///     Currency # 943 - Mozambique Metical
+        /// </summary>
+        public static readonly Currency MZN;
+
+        /// <summary>
+        ///     Currency # 944 - Azerbaijan Manat
+        /// </summary>
+        public static readonly Currency AZN;
+
+        /// <summary>
+        ///     Currency # 946 - Romanian Leu
+        /// </summary>
+        public static readonly Currency RON;
+
+        /// <summary>
+        ///     Currency # 947 - WIR Euro isFund = true
+        /// </summary>
+        public static readonly Currency CHE;
+
+        /// <summary>
+        ///     Currency # 948 - WIR Franc isFund = true
+        /// </summary>
+        public static readonly Currency CHW;
+
+        /// <summary>
+        ///     Currency # 949 - Turkish Lira
+        /// </summary>
+        public static readonly Currency TRY;
+
+        /// <summary>
+        ///     Currency # 950 - CFA Franc BEAC
+        /// </summary>
+        public static readonly Currency XAF;
+
+        /// <summary>
+        ///     Currency # 951 - East Caribbean Dollar
+        /// </summary>
+        public static readonly Currency XCD;
+
+        /// <summary>
+        ///     Currency # 952 - CFA Franc BCEAO
+        /// </summary>
+        public static readonly Currency XOF;
+
+        /// <summary>
+        ///     Currency # 953 - CFP Franc
+        /// </summary>
+        public static readonly Currency XPF;
+
+        /// <summary>
+        ///     Currency # 955 - Bond Markets Unit European Composite Unit (EURCO)
+        /// </summary>
+        public static readonly Currency XBA;
+
+        /// <summary>
+        ///     Currency # 956 - Bond Markets Unit European Monetary Unit (E.M.U.-6)
+        /// </summary>
+        public static readonly Currency XBB;
+
+        /// <summary>
+        ///     Currency # 957 - Bond Markets Unit European Unit of Account 9 (E.U.A.-9)
+        /// </summary>
+        public static readonly Currency XBC;
+
+        /// <summary>
+        ///     Currency # 958 - Bond Markets Unit European Unit of Account 17 (E.U.A.-17)
+        /// </summary>
+        public static readonly Currency XBD;
+
+        /// <summary>
+        ///     Currency # 959 - Gold
+        /// </summary>
+        public static readonly Currency XAU;
+
+        /// <summary>
+        ///     Currency # 960 - SDR (Special Drawing Right)
+        /// </summary>
+        public static readonly Currency XDR;
+
+        /// <summary>
+        ///     Currency # 961 - Silver
+        /// </summary>
+        public static readonly Currency XAG;
+
+        /// <summary>
+        ///     Currency # 962 - Platinum
+        /// </summary>
+        public static readonly Currency XPT;
+
+        /// <summary>
+        ///     Currency # 963 - Codes specifically reserved for testing purposes
+        /// </summary>
+        public static readonly Currency XTS;
+
+        /// <summary>
+        ///     Currency # 964 - Palladium
+        /// </summary>
+        public static readonly Currency XPD;
+
+        /// <summary>
+        ///     Currency # 965 - ADB Unit of Account
+        /// </summary>
+        public static readonly Currency XUA;
+
+        /// <summary>
+        ///     Currency # 967 - Zambian Kwacha
+        /// </summary>
+        public static readonly Currency ZMW;
+
+        /// <summary>
+        ///     Currency # 968 - Surinam Dollar
+        /// </summary>
+        public static readonly Currency SRD;
+
+        /// <summary>
+        ///     Currency # 969 - Malagasy Ariary
+        /// </summary>
+        public static readonly Currency MGA;
+
+        /// <summary>
+        ///     Currency # 970 - Unidad de Valor Real isFund = true
+        /// </summary>
+        public static readonly Currency COU;
+
+        /// <summary>
+        ///     Currency # 971 - Afghani
+        /// </summary>
+        public static readonly Currency AFN;
+
+        /// <summary>
+        ///     Currency # 972 - Somoni
+        /// </summary>
+        public static readonly Currency TJS;
+
+        /// <summary>
+        ///     Currency # 973 - Kwanza
+        /// </summary>
+        public static readonly Currency AOA;
+
+        /// <summary>
+        ///     Currency # 975 - Bulgarian Lev
+        /// </summary>
+        public static readonly Currency BGN;
+
+        /// <summary>
+        ///     Currency # 976 - Congolese Franc
+        /// </summary>
+        public static readonly Currency CDF;
+
+        /// <summary>
+        ///     Currency # 977 - Convertible Mark
+        /// </summary>
+        public static readonly Currency BAM;
+
+        /// <summary>
+        ///     Currency # 978 - Euro
+        /// </summary>
+        public static readonly Currency EUR;
+
+        /// <summary>
+        ///     Currency # 979 - Mexican Unidad de Inversion (UDI) isFund = true
+        /// </summary>
+        public static readonly Currency MXV;
+
+        /// <summary>
+        ///     Currency # 980 - Hryvnia
+        /// </summary>
+        public static readonly Currency UAH;
+
+        /// <summary>
+        ///     Currency # 981 - Lari
+        /// </summary>
+        public static readonly Currency GEL;
+
+        /// <summary>
+        ///     Currency # 984 - Mvdol isFund = true
+        /// </summary>
+        public static readonly Currency BOV;
+
+        /// <summary>
+        ///     Currency # 985 - Zloty
+        /// </summary>
+        public static readonly Currency PLN;
+
+        /// <summary>
+        ///     Currency # 986 - Brazilian Real
+        /// </summary>
+        public static readonly Currency BRL;
+
+        /// <summary>
+        ///     Currency # 990 - Unidad de Fomento isFund = true
+        /// </summary>
+        public static readonly Currency CLF;
+
+        /// <summary>
+        ///     Currency # 994 - Sucre
+        /// </summary>
+        public static readonly Currency XSU;
+
+        /// <summary>
+        ///     Currency # 997 - US Dollar (Next day) isFund = true
+        /// </summary>
+        public static readonly Currency USN;
+
+        /// <summary>
+        ///     Currency # 998 - US Dollar (Same day) isFund = true
+        /// </summary>
+        public static readonly Currency USS;
+
+        /// <summary>
+        ///     Currency # 999 - The codes assigned for transactions where no currency is involved
+        /// </summary>
+        public static readonly Currency XXX;
+
+        public static readonly Currency None = XXX;
+
+        #endregion
 
         static Currency()
         {
@@ -919,196 +977,391 @@ namespace System
                 CurrencySymbolByIsoCurrencySymbol[isoCurrencySymbol] = regionInfo.CurrencySymbol;
             }
 
+            #region set Static Currency Fields & CurrencyByIsoCurrencySymbol
 
-            CurrencyInfoByIsoCurrencySymbol[840] = new CurrencyInfo("US Dollar", "USD", 840);
-            CurrencyInfoByIsoCurrencySymbol[008] = new CurrencyInfo("Lek", "ALL", 008);
-            CurrencyInfoByIsoCurrencySymbol[012] = new CurrencyInfo("Algerian Dinar", "DZD", 012);
-            CurrencyInfoByIsoCurrencySymbol[032] = new CurrencyInfo("Argentine Peso", "ARS", 032);
-            CurrencyInfoByIsoCurrencySymbol[036] = new CurrencyInfo("Australian Dollar", "AUD", 036);
-            CurrencyInfoByIsoCurrencySymbol[044] = new CurrencyInfo("Bahamian Dollar", "BSD", 044);
-            CurrencyInfoByIsoCurrencySymbol[048] = new CurrencyInfo("Bahraini Dinar", "BHD", 048);
-            CurrencyInfoByIsoCurrencySymbol[050] = new CurrencyInfo("Taka", "BDT", 050);
-            CurrencyInfoByIsoCurrencySymbol[051] = new CurrencyInfo("Armenian Dram", "AMD", 051);
-            CurrencyInfoByIsoCurrencySymbol[052] = new CurrencyInfo("Barbados Dollar", "BBD", 052);
-            CurrencyInfoByIsoCurrencySymbol[060] =
-                new CurrencyInfo("Bermudian Dollar (customarily known as Bermuda Dollar)", "BMD", 060);
-            CurrencyInfoByIsoCurrencySymbol[068] = new CurrencyInfo("Boliviano", "BOB", 068);
-            CurrencyInfoByIsoCurrencySymbol[072] = new CurrencyInfo("Pula", "BWP", 072);
-            CurrencyInfoByIsoCurrencySymbol[084] = new CurrencyInfo("Belize Dollar", "BZD", 084);
-            CurrencyInfoByIsoCurrencySymbol[090] = new CurrencyInfo("Solomon Islands Dollar", "SBD", 090);
-            CurrencyInfoByIsoCurrencySymbol[096] = new CurrencyInfo("Brunei Dollar", "BND", 096);
-            CurrencyInfoByIsoCurrencySymbol[104] = new CurrencyInfo("Kyat", "MMK", 104);
-            CurrencyInfoByIsoCurrencySymbol[108] = new CurrencyInfo("Burundi Franc", "BIF", 108);
-            CurrencyInfoByIsoCurrencySymbol[116] = new CurrencyInfo("Riel", "KHR", 116);
-            CurrencyInfoByIsoCurrencySymbol[124] = new CurrencyInfo("Canadian Dollar", "CAD", 124);
-            CurrencyInfoByIsoCurrencySymbol[132] = new CurrencyInfo("Cape Verde Escudo", "CVE", 132);
-            CurrencyInfoByIsoCurrencySymbol[136] = new CurrencyInfo("Cayman Islands Dollar", "KYD", 136);
-            CurrencyInfoByIsoCurrencySymbol[144] = new CurrencyInfo("Sri Lanka Rupee", "LKR", 144);
-            CurrencyInfoByIsoCurrencySymbol[152] = new CurrencyInfo("Chilean Peso", "CLP", 152);
-            CurrencyInfoByIsoCurrencySymbol[156] = new CurrencyInfo("Yuan Renminbi", "CNY", 156);
-            CurrencyInfoByIsoCurrencySymbol[170] = new CurrencyInfo("Colombian Peso", "COP", 170);
-            CurrencyInfoByIsoCurrencySymbol[174] = new CurrencyInfo("Comoro Franc", "KMF", 174);
-            CurrencyInfoByIsoCurrencySymbol[188] = new CurrencyInfo("Costa Rican Colon", "CRC", 188);
-            CurrencyInfoByIsoCurrencySymbol[191] = new CurrencyInfo("Croatian Kuna", "HRK", 191);
-            CurrencyInfoByIsoCurrencySymbol[192] = new CurrencyInfo("Cuban Peso", "CUP", 192);
-            CurrencyInfoByIsoCurrencySymbol[203] = new CurrencyInfo("Czech Koruna", "CZK", 203);
-            CurrencyInfoByIsoCurrencySymbol[208] = new CurrencyInfo("Danish Krone", "DKK", 208);
-            CurrencyInfoByIsoCurrencySymbol[214] = new CurrencyInfo("Dominican Peso", "DOP", 214);
-            CurrencyInfoByIsoCurrencySymbol[222] = new CurrencyInfo("El Salvador Colon", "SVC", 222);
-            CurrencyInfoByIsoCurrencySymbol[230] = new CurrencyInfo("Ethiopian Birr", "ETB", 230);
-            CurrencyInfoByIsoCurrencySymbol[232] = new CurrencyInfo("Nakfa", "ERN", 232);
-            CurrencyInfoByIsoCurrencySymbol[233] = new CurrencyInfo("Kroon", "EEK", 233);
-            CurrencyInfoByIsoCurrencySymbol[238] = new CurrencyInfo("Falkland Islands Pound", "FKP", 238);
-            CurrencyInfoByIsoCurrencySymbol[242] = new CurrencyInfo("Fiji Dollar", "FJD", 242);
-            CurrencyInfoByIsoCurrencySymbol[262] = new CurrencyInfo("Djibouti Franc", "DJF", 262);
-            CurrencyInfoByIsoCurrencySymbol[270] = new CurrencyInfo("Dalasi", "GMD", 270);
-            CurrencyInfoByIsoCurrencySymbol[292] = new CurrencyInfo("Gibraltar Pound", "GIP", 292);
-            CurrencyInfoByIsoCurrencySymbol[320] = new CurrencyInfo("Quetzal", "GTQ", 320);
-            CurrencyInfoByIsoCurrencySymbol[324] = new CurrencyInfo("Guinea Franc", "GNF", 324);
-            CurrencyInfoByIsoCurrencySymbol[328] = new CurrencyInfo("Guyana Dollar", "GYD", 328);
-            CurrencyInfoByIsoCurrencySymbol[332] = new CurrencyInfo("Gourde", "HTG", 332);
-            CurrencyInfoByIsoCurrencySymbol[340] = new CurrencyInfo("Lempira", "HNL", 340);
-            CurrencyInfoByIsoCurrencySymbol[344] = new CurrencyInfo("Hong Kong Dollar", "HKD", 344);
-            CurrencyInfoByIsoCurrencySymbol[348] = new CurrencyInfo("Forint", "HUF", 348);
-            CurrencyInfoByIsoCurrencySymbol[352] = new CurrencyInfo("Iceland Krona", "ISK", 352);
-            CurrencyInfoByIsoCurrencySymbol[356] = new CurrencyInfo("Indian Rupee", "INR", 356);
-            CurrencyInfoByIsoCurrencySymbol[360] = new CurrencyInfo("Rupiah", "IDR", 360);
-            CurrencyInfoByIsoCurrencySymbol[364] = new CurrencyInfo("Iranian Rial", "IRR", 364);
-            CurrencyInfoByIsoCurrencySymbol[368] = new CurrencyInfo("Iraqi Dinar", "IQD", 368);
-            CurrencyInfoByIsoCurrencySymbol[376] = new CurrencyInfo("New Israeli Sheqel", "ILS", 376);
-            CurrencyInfoByIsoCurrencySymbol[388] = new CurrencyInfo("Jamaican Dollar", "JMD", 388);
-            CurrencyInfoByIsoCurrencySymbol[392] = new CurrencyInfo("Yen", "JPY", 392);
-            CurrencyInfoByIsoCurrencySymbol[398] = new CurrencyInfo("Tenge", "KZT", 398);
-            CurrencyInfoByIsoCurrencySymbol[400] = new CurrencyInfo("Jordanian Dinar", "JOD", 400);
-            CurrencyInfoByIsoCurrencySymbol[404] = new CurrencyInfo("Kenyan Shilling", "KES", 404);
-            CurrencyInfoByIsoCurrencySymbol[408] = new CurrencyInfo("North Korean Won", "KPW", 408);
-            CurrencyInfoByIsoCurrencySymbol[410] = new CurrencyInfo("Won", "KRW", 410);
-            CurrencyInfoByIsoCurrencySymbol[414] = new CurrencyInfo("Kuwaiti Dinar", "KWD", 414);
-            CurrencyInfoByIsoCurrencySymbol[417] = new CurrencyInfo("Som", "KGS", 417);
-            CurrencyInfoByIsoCurrencySymbol[418] = new CurrencyInfo("Kip", "LAK", 418);
-            CurrencyInfoByIsoCurrencySymbol[422] = new CurrencyInfo("Lebanese Pound", "LBP", 422);
-            CurrencyInfoByIsoCurrencySymbol[428] = new CurrencyInfo("Latvian Lats", "LVL", 428);
-            CurrencyInfoByIsoCurrencySymbol[430] = new CurrencyInfo("Liberian Dollar", "LRD", 430);
-            CurrencyInfoByIsoCurrencySymbol[434] = new CurrencyInfo("Libyan Dinar", "LYD", 434);
-            CurrencyInfoByIsoCurrencySymbol[440] = new CurrencyInfo("Lithuanian Litas", "LTL", 440);
-            CurrencyInfoByIsoCurrencySymbol[446] = new CurrencyInfo("Pataca", "MOP", 446);
-            CurrencyInfoByIsoCurrencySymbol[454] = new CurrencyInfo("Kwacha", "MWK", 454);
-            CurrencyInfoByIsoCurrencySymbol[458] = new CurrencyInfo("Malaysian Ringgit", "MYR", 458);
-            CurrencyInfoByIsoCurrencySymbol[462] = new CurrencyInfo("Rufiyaa", "MVR", 462);
-            CurrencyInfoByIsoCurrencySymbol[478] = new CurrencyInfo("Ouguiya", "MRO", 478);
-            CurrencyInfoByIsoCurrencySymbol[480] = new CurrencyInfo("Mauritius Rupee", "MUR", 480);
-            CurrencyInfoByIsoCurrencySymbol[484] = new CurrencyInfo("Mexican Peso", "MXN", 484);
-            CurrencyInfoByIsoCurrencySymbol[496] = new CurrencyInfo("Tugrik", "MNT", 496);
-            CurrencyInfoByIsoCurrencySymbol[498] = new CurrencyInfo("Moldovan Leu", "MDL", 498);
-            CurrencyInfoByIsoCurrencySymbol[504] = new CurrencyInfo("Moroccan Dirham", "MAD", 504);
-            CurrencyInfoByIsoCurrencySymbol[512] = new CurrencyInfo("Rial Omani", "OMR", 512);
-            CurrencyInfoByIsoCurrencySymbol[524] = new CurrencyInfo("Nepalese Rupee", "NPR", 524);
-            CurrencyInfoByIsoCurrencySymbol[532] = new CurrencyInfo("Netherlands Antillian Guilder", "ANG", 532);
-            CurrencyInfoByIsoCurrencySymbol[533] = new CurrencyInfo("Aruban Guilder", "AWG", 533);
-            CurrencyInfoByIsoCurrencySymbol[548] = new CurrencyInfo("Vatu", "VUV", 548);
-            CurrencyInfoByIsoCurrencySymbol[554] = new CurrencyInfo("New Zealand Dollar", "NZD", 554);
-            CurrencyInfoByIsoCurrencySymbol[558] = new CurrencyInfo("Cordoba Oro", "NIO", 558);
-            CurrencyInfoByIsoCurrencySymbol[566] = new CurrencyInfo("Naira", "NGN", 566);
-            CurrencyInfoByIsoCurrencySymbol[578] = new CurrencyInfo("Norwegian Krone", "NOK", 578);
-            CurrencyInfoByIsoCurrencySymbol[586] = new CurrencyInfo("Pakistan Rupee", "PKR", 586);
-            CurrencyInfoByIsoCurrencySymbol[590] = new CurrencyInfo("Balboa", "PAB", 590);
-            CurrencyInfoByIsoCurrencySymbol[598] = new CurrencyInfo("Kina", "PGK", 598);
-            CurrencyInfoByIsoCurrencySymbol[600] = new CurrencyInfo("Guarani", "PYG", 600);
-            CurrencyInfoByIsoCurrencySymbol[604] = new CurrencyInfo("Nuevo Sol", "PEN", 604);
-            CurrencyInfoByIsoCurrencySymbol[608] = new CurrencyInfo("Philippine Peso", "PHP", 608);
-            CurrencyInfoByIsoCurrencySymbol[624] = new CurrencyInfo("Guinea-Bissau Peso", "GWP", 624);
-            CurrencyInfoByIsoCurrencySymbol[634] = new CurrencyInfo("Qatari Rial", "QAR", 634);
-            CurrencyInfoByIsoCurrencySymbol[643] = new CurrencyInfo("Russian Ruble", "RUB", 643);
-            CurrencyInfoByIsoCurrencySymbol[646] = new CurrencyInfo("Rwanda Franc", "RWF", 646);
-            CurrencyInfoByIsoCurrencySymbol[654] = new CurrencyInfo("Saint Helena Pound", "SHP", 654);
-            CurrencyInfoByIsoCurrencySymbol[678] = new CurrencyInfo("Dobra", "STD", 678);
-            CurrencyInfoByIsoCurrencySymbol[682] = new CurrencyInfo("Saudi Riyal", "SAR", 682);
-            CurrencyInfoByIsoCurrencySymbol[690] = new CurrencyInfo("Seychelles Rupee", "SCR", 690);
-            CurrencyInfoByIsoCurrencySymbol[694] = new CurrencyInfo("Leone", "SLL", 694);
-            CurrencyInfoByIsoCurrencySymbol[702] = new CurrencyInfo("Singapore Dollar", "SGD", 702);
-            CurrencyInfoByIsoCurrencySymbol[703] = new CurrencyInfo("Slovak Koruna", "SKK", 703);
-            CurrencyInfoByIsoCurrencySymbol[704] = new CurrencyInfo("Dong", "VND", 704);
-            CurrencyInfoByIsoCurrencySymbol[706] = new CurrencyInfo("Somali Shilling", "SOS", 706);
-            CurrencyInfoByIsoCurrencySymbol[710] = new CurrencyInfo("Rand", "ZAR", 710);
-            CurrencyInfoByIsoCurrencySymbol[716] = new CurrencyInfo("Zimbabwe Dollar", "ZWD", 716);
-            CurrencyInfoByIsoCurrencySymbol[748] = new CurrencyInfo("Lilangeni", "SZL", 748);
-            CurrencyInfoByIsoCurrencySymbol[752] = new CurrencyInfo("Swedish Krona", "SEK", 752);
-            CurrencyInfoByIsoCurrencySymbol[756] = new CurrencyInfo("Swiss Franc", "CHF", 756);
-            CurrencyInfoByIsoCurrencySymbol[760] = new CurrencyInfo("Syrian Pound", "SYP", 760);
-            CurrencyInfoByIsoCurrencySymbol[764] = new CurrencyInfo("Baht", "THB", 764);
-            CurrencyInfoByIsoCurrencySymbol[776] = new CurrencyInfo("Pa'anga", "TOP", 776);
-            CurrencyInfoByIsoCurrencySymbol[780] = new CurrencyInfo("Trinidad and Tobago Dollar", "TTD", 780);
-            CurrencyInfoByIsoCurrencySymbol[784] = new CurrencyInfo("UAE Dirham", "AED", 784);
-            CurrencyInfoByIsoCurrencySymbol[788] = new CurrencyInfo("Tunisian Dinar", "TND", 788);
-            CurrencyInfoByIsoCurrencySymbol[795] = new CurrencyInfo("Manat", "TMM", 795);
-            CurrencyInfoByIsoCurrencySymbol[800] = new CurrencyInfo("Uganda Shilling", "UGX", 800);
-            CurrencyInfoByIsoCurrencySymbol[807] = new CurrencyInfo("Denar", "MKD", 807);
-            CurrencyInfoByIsoCurrencySymbol[818] = new CurrencyInfo("Egyptian Pound", "EGP", 818);
-            CurrencyInfoByIsoCurrencySymbol[826] = new CurrencyInfo("Pound Sterling", "GBP", 826);
-            CurrencyInfoByIsoCurrencySymbol[834] = new CurrencyInfo("Tanzanian Shilling", "TZS", 834);
-            CurrencyInfoByIsoCurrencySymbol[858] = new CurrencyInfo("Peso Uruguayo", "UYU", 858);
-            CurrencyInfoByIsoCurrencySymbol[860] = new CurrencyInfo("Uzbekistan Sum", "UZS", 860);
-            CurrencyInfoByIsoCurrencySymbol[882] = new CurrencyInfo("Tala", "WST", 882);
-            CurrencyInfoByIsoCurrencySymbol[886] = new CurrencyInfo("Yemeni Rial", "YER", 886);
-            CurrencyInfoByIsoCurrencySymbol[894] = new CurrencyInfo("Kwacha", "ZMK", 894);
-            CurrencyInfoByIsoCurrencySymbol[901] = new CurrencyInfo("New Taiwan Dollar", "TWD", 901);
-            CurrencyInfoByIsoCurrencySymbol[936] = new CurrencyInfo("Ghana Cedi", "GHS", 936);
-            CurrencyInfoByIsoCurrencySymbol[937] = new CurrencyInfo("Bolivar Fuerte", "VEF", 937);
-            CurrencyInfoByIsoCurrencySymbol[938] = new CurrencyInfo("Sudanese Pound", "SDG", 938);
-            CurrencyInfoByIsoCurrencySymbol[941] = new CurrencyInfo("Serbian Dinar", "RSD", 941);
-            CurrencyInfoByIsoCurrencySymbol[943] = new CurrencyInfo("Metical", "MZN", 943);
-            CurrencyInfoByIsoCurrencySymbol[944] = new CurrencyInfo("Azerbaijanian Manat", "AZN", 944);
-            CurrencyInfoByIsoCurrencySymbol[946] = new CurrencyInfo("New Leu", "RON", 946);
-            CurrencyInfoByIsoCurrencySymbol[949] = new CurrencyInfo("New Turkish Lira", "TRY", 949);
-            CurrencyInfoByIsoCurrencySymbol[950] = new CurrencyInfo("CFA Franc BEAC", "XAF", 950);
-            CurrencyInfoByIsoCurrencySymbol[951] = new CurrencyInfo("East Caribbean Dollar", "XCD", 951);
-            CurrencyInfoByIsoCurrencySymbol[952] = new CurrencyInfo("CFA Franc BCEAO", "XOF", 952);
-            CurrencyInfoByIsoCurrencySymbol[953] = new CurrencyInfo("CFP Franc", "XPF", 953);
-            CurrencyInfoByIsoCurrencySymbol[955] =
-                new CurrencyInfo("Bond Markets Units European Composite Unit (EURCO)", "XBA", 955);
-            CurrencyInfoByIsoCurrencySymbol[956] = new CurrencyInfo("European Monetary Unit (E.M.U.-6)", "XBB", 956);
-            CurrencyInfoByIsoCurrencySymbol[957] = new CurrencyInfo("European Unit of Account 9(E.U.A.-9)", "XBC", 957);
-            CurrencyInfoByIsoCurrencySymbol[958] =
-                new CurrencyInfo("European Unit of Account 17(E.U.A.-17)", "XBD", 958);
-            CurrencyInfoByIsoCurrencySymbol[959] = new CurrencyInfo("Gold", "XAU", 959);
-            CurrencyInfoByIsoCurrencySymbol[960] = new CurrencyInfo("SDR", "XDR", 960);
-            CurrencyInfoByIsoCurrencySymbol[961] = new CurrencyInfo("Silver", "XAG", 961);
-            CurrencyInfoByIsoCurrencySymbol[962] = new CurrencyInfo("Platinum", "XPT", 962);
-            CurrencyInfoByIsoCurrencySymbol[963] =
-                new CurrencyInfo("Codes specifically reserved for testing purposes", "XTS", 963);
-            CurrencyInfoByIsoCurrencySymbol[964] = new CurrencyInfo("Palladium", "XPD", 964);
-            CurrencyInfoByIsoCurrencySymbol[968] = new CurrencyInfo("Surinam Dollar", "SRD", 968);
-            CurrencyInfoByIsoCurrencySymbol[969] = new CurrencyInfo("Malagasy Ariary", "MGA", 969);
-            CurrencyInfoByIsoCurrencySymbol[971] = new CurrencyInfo("Afghani", "AFN", 971);
-            CurrencyInfoByIsoCurrencySymbol[972] = new CurrencyInfo("Somoni", "TJS", 972);
-            CurrencyInfoByIsoCurrencySymbol[973] = new CurrencyInfo("Kwanza", "AOA", 973);
-            CurrencyInfoByIsoCurrencySymbol[974] = new CurrencyInfo("Belarussian Ruble", "BYR", 974);
-            CurrencyInfoByIsoCurrencySymbol[975] = new CurrencyInfo("Bulgarian Lev", "BGN", 975);
-            CurrencyInfoByIsoCurrencySymbol[976] = new CurrencyInfo("Franc Congolais", "CDF", 976);
-            CurrencyInfoByIsoCurrencySymbol[977] = new CurrencyInfo("Convertible Marks", "BAM", 977);
-            CurrencyInfoByIsoCurrencySymbol[978] = new CurrencyInfo("Euro", "EUR", 978);
-            CurrencyInfoByIsoCurrencySymbol[980] = new CurrencyInfo("Hryvnia", "UAH", 980);
-            CurrencyInfoByIsoCurrencySymbol[981] = new CurrencyInfo("Lari", "GEL", 981);
-            CurrencyInfoByIsoCurrencySymbol[985] = new CurrencyInfo("Zloty", "PLN", 985);
-            CurrencyInfoByIsoCurrencySymbol[986] = new CurrencyInfo("Brazilian Real", "BRL", 986);
-            CurrencyInfoByIsoCurrencySymbol[999] =
-                new CurrencyInfo("The codes assigned for transactions where no currency is involved are:", "XXX", 999);
+            USD = new Currency("US Dollar", "USD", 840, false);
+            CurrencyByIsoCurrencySymbol[840] = USD; // US Dollar                      
+            JPY = new Currency("Yen", "JPY", 392, false);
+            CurrencyByIsoCurrencySymbol[392] = JPY; // Yen             
+            ALL = new Currency("Lek", "ALL", 008, false);
+            CurrencyByIsoCurrencySymbol[008] = ALL; // Lek            
+            DZD = new Currency("Algerian Dinar", "DZD", 012, false);
+            CurrencyByIsoCurrencySymbol[012] = DZD; // Algerian Dinar            
+            ARS = new Currency("Argentine Peso", "ARS", 032, false);
+            CurrencyByIsoCurrencySymbol[032] = ARS; // Argentine Peso            
+            AUD = new Currency("Australian Dollar", "AUD", 036, false);
+            CurrencyByIsoCurrencySymbol[036] = AUD; // Australian Dollar            
+            BSD = new Currency("Bahamian Dollar", "BSD", 044, false);
+            CurrencyByIsoCurrencySymbol[044] = BSD; // Bahamian Dollar            
+            BHD = new Currency("Bahraini Dinar", "BHD", 048, false);
+            CurrencyByIsoCurrencySymbol[048] = BHD; // Bahraini Dinar            
+            BDT = new Currency("Taka", "BDT", 050, false);
+            CurrencyByIsoCurrencySymbol[050] = BDT; // Taka            
+            AMD = new Currency("Armenian Dram", "AMD", 051, false);
+            CurrencyByIsoCurrencySymbol[051] = AMD; // Armenian Dram            
+            BBD = new Currency("Barbados Dollar", "BBD", 052, false);
+            CurrencyByIsoCurrencySymbol[052] = BBD; // Barbados Dollar            
+            BMD = new Currency("Bermudian Dollar", "BMD", 060, false);
+            CurrencyByIsoCurrencySymbol[060] = BMD; // Bermudian Dollar            
+            BTN = new Currency("Ngultrum", "BTN", 064, false);
+            CurrencyByIsoCurrencySymbol[064] = BTN; // Ngultrum            
+            BOB = new Currency("Boliviano", "BOB", 068, false);
+            CurrencyByIsoCurrencySymbol[068] = BOB; // Boliviano            
+            BWP = new Currency("Pula", "BWP", 072, false);
+            CurrencyByIsoCurrencySymbol[072] = BWP; // Pula            
+            BZD = new Currency("Belize Dollar", "BZD", 084, false);
+            CurrencyByIsoCurrencySymbol[084] = BZD; // Belize Dollar            
+            SBD = new Currency("Solomon Islands Dollar", "SBD", 090, false);
+            CurrencyByIsoCurrencySymbol[090] = SBD; // Solomon Islands Dollar            
+            BND = new Currency("Brunei Dollar", "BND", 096, false);
+            CurrencyByIsoCurrencySymbol[096] = BND; // Brunei Dollar            
+            MMK = new Currency("Kyat", "MMK", 104, false);
+            CurrencyByIsoCurrencySymbol[104] = MMK; // Kyat            
+            BIF = new Currency("Burundi Franc", "BIF", 108, false);
+            CurrencyByIsoCurrencySymbol[108] = BIF; // Burundi Franc            
+            KHR = new Currency("Riel", "KHR", 116, false);
+            CurrencyByIsoCurrencySymbol[116] = KHR; // Riel            
+            CAD = new Currency("Canadian Dollar", "CAD", 124, false);
+            CurrencyByIsoCurrencySymbol[124] = CAD; // Canadian Dollar            
+            CVE = new Currency("Cabo Verde Escudo", "CVE", 132, false);
+            CurrencyByIsoCurrencySymbol[132] = CVE; // Cabo Verde Escudo            
+            KYD = new Currency("Cayman Islands Dollar", "KYD", 136, false);
+            CurrencyByIsoCurrencySymbol[136] = KYD; // Cayman Islands Dollar            
+            LKR = new Currency("Sri Lanka Rupee", "LKR", 144, false);
+            CurrencyByIsoCurrencySymbol[144] = LKR; // Sri Lanka Rupee            
+            CLP = new Currency("Chilean Peso", "CLP", 152, false);
+            CurrencyByIsoCurrencySymbol[152] = CLP; // Chilean Peso            
+            CNY = new Currency("Yuan Renminbi", "CNY", 156, false);
+            CurrencyByIsoCurrencySymbol[156] = CNY; // Yuan Renminbi            
+            COP = new Currency("Colombian Peso", "COP", 170, false);
+            CurrencyByIsoCurrencySymbol[170] = COP; // Colombian Peso            
+            KMF = new Currency("Comorian Franc", "KMF", 174, false);
+            CurrencyByIsoCurrencySymbol[174] = KMF; // Comorian Franc            
+            CRC = new Currency("Costa Rican Colon", "CRC", 188, false);
+            CurrencyByIsoCurrencySymbol[188] = CRC; // Costa Rican Colon            
+            CUP = new Currency("Cuban Peso", "CUP", 192, false);
+            CurrencyByIsoCurrencySymbol[192] = CUP; // Cuban Peso            
+            CZK = new Currency("Czech Koruna", "CZK", 203, false);
+            CurrencyByIsoCurrencySymbol[203] = CZK; // Czech Koruna            
+            DKK = new Currency("Danish Krone", "DKK", 208, false);
+            CurrencyByIsoCurrencySymbol[208] = DKK; // Danish Krone            
+            DOP = new Currency("Dominican Peso", "DOP", 214, false);
+            CurrencyByIsoCurrencySymbol[214] = DOP; // Dominican Peso            
+            SVC = new Currency("El Salvador Colon", "SVC", 222, false);
+            CurrencyByIsoCurrencySymbol[222] = SVC; // El Salvador Colon            
+            ETB = new Currency("Ethiopian Birr", "ETB", 230, false);
+            CurrencyByIsoCurrencySymbol[230] = ETB; // Ethiopian Birr            
+            ERN = new Currency("Nakfa", "ERN", 232, false);
+            CurrencyByIsoCurrencySymbol[232] = ERN; // Nakfa            
+            FKP = new Currency("Falkland Islands Pound", "FKP", 238, false);
+            CurrencyByIsoCurrencySymbol[238] = FKP; // Falkland Islands Pound            
+            FJD = new Currency("Fiji Dollar", "FJD", 242, false);
+            CurrencyByIsoCurrencySymbol[242] = FJD; // Fiji Dollar            
+            DJF = new Currency("Djibouti Franc", "DJF", 262, false);
+            CurrencyByIsoCurrencySymbol[262] = DJF; // Djibouti Franc            
+            GMD = new Currency("Dalasi", "GMD", 270, false);
+            CurrencyByIsoCurrencySymbol[270] = GMD; // Dalasi            
+            GIP = new Currency("Gibraltar Pound", "GIP", 292, false);
+            CurrencyByIsoCurrencySymbol[292] = GIP; // Gibraltar Pound            
+            GTQ = new Currency("Quetzal", "GTQ", 320, false);
+            CurrencyByIsoCurrencySymbol[320] = GTQ; // Quetzal            
+            GNF = new Currency("Guinean Franc", "GNF", 324, false);
+            CurrencyByIsoCurrencySymbol[324] = GNF; // Guinean Franc            
+            GYD = new Currency("Guyana Dollar", "GYD", 328, false);
+            CurrencyByIsoCurrencySymbol[328] = GYD; // Guyana Dollar            
+            HTG = new Currency("Gourde", "HTG", 332, false);
+            CurrencyByIsoCurrencySymbol[332] = HTG; // Gourde            
+            HNL = new Currency("Lempira", "HNL", 340, false);
+            CurrencyByIsoCurrencySymbol[340] = HNL; // Lempira            
+            HKD = new Currency("Hong Kong Dollar", "HKD", 344, false);
+            CurrencyByIsoCurrencySymbol[344] = HKD; // Hong Kong Dollar            
+            HUF = new Currency("Forint", "HUF", 348, false);
+            CurrencyByIsoCurrencySymbol[348] = HUF; // Forint            
+            ISK = new Currency("Iceland Krona", "ISK", 352, false);
+            CurrencyByIsoCurrencySymbol[352] = ISK; // Iceland Krona            
+            INR = new Currency("Indian Rupee", "INR", 356, false);
+            CurrencyByIsoCurrencySymbol[356] = INR; // Indian Rupee            
+            IDR = new Currency("Rupiah", "IDR", 360, false);
+            CurrencyByIsoCurrencySymbol[360] = IDR; // Rupiah            
+            IRR = new Currency("Iranian Rial", "IRR", 364, false);
+            CurrencyByIsoCurrencySymbol[364] = IRR; // Iranian Rial            
+            IQD = new Currency("Iraqi Dinar", "IQD", 368, false);
+            CurrencyByIsoCurrencySymbol[368] = IQD; // Iraqi Dinar            
+            ILS = new Currency("New Israeli Sheqel", "ILS", 376, false);
+            CurrencyByIsoCurrencySymbol[376] = ILS; // New Israeli Sheqel            
+            JMD = new Currency("Jamaican Dollar", "JMD", 388, false);
+            CurrencyByIsoCurrencySymbol[388] = JMD; // Jamaican Dollar 
+            KZT = new Currency("Tenge", "KZT", 398, false);
+            CurrencyByIsoCurrencySymbol[398] = KZT; // Tenge            
+            JOD = new Currency("Jordanian Dinar", "JOD", 400, false);
+            CurrencyByIsoCurrencySymbol[400] = JOD; // Jordanian Dinar            
+            KES = new Currency("Kenyan Shilling", "KES", 404, false);
+            CurrencyByIsoCurrencySymbol[404] = KES; // Kenyan Shilling            
+            KPW = new Currency("North Korean Won", "KPW", 408, false);
+            CurrencyByIsoCurrencySymbol[408] = KPW; // North Korean Won            
+            KRW = new Currency("Won", "KRW", 410, false);
+            CurrencyByIsoCurrencySymbol[410] = KRW; // Won            
+            KWD = new Currency("Kuwaiti Dinar", "KWD", 414, false);
+            CurrencyByIsoCurrencySymbol[414] = KWD; // Kuwaiti Dinar            
+            KGS = new Currency("Som", "KGS", 417, false);
+            CurrencyByIsoCurrencySymbol[417] = KGS; // Som            
+            LAK = new Currency("Lao Kip", "LAK", 418, false);
+            CurrencyByIsoCurrencySymbol[418] = LAK; // Lao Kip            
+            LBP = new Currency("Lebanese Pound", "LBP", 422, false);
+            CurrencyByIsoCurrencySymbol[422] = LBP; // Lebanese Pound            
+            LSL = new Currency("Loti", "LSL", 426, false);
+            CurrencyByIsoCurrencySymbol[426] = LSL; // Loti            
+            LRD = new Currency("Liberian Dollar", "LRD", 430, false);
+            CurrencyByIsoCurrencySymbol[430] = LRD; // Liberian Dollar            
+            LYD = new Currency("Libyan Dinar", "LYD", 434, false);
+            CurrencyByIsoCurrencySymbol[434] = LYD; // Libyan Dinar            
+            MOP = new Currency("Pataca", "MOP", 446, false);
+            CurrencyByIsoCurrencySymbol[446] = MOP; // Pataca            
+            MWK = new Currency("Malawi Kwacha", "MWK", 454, false);
+            CurrencyByIsoCurrencySymbol[454] = MWK; // Malawi Kwacha            
+            MYR = new Currency("Malaysian Ringgit", "MYR", 458, false);
+            CurrencyByIsoCurrencySymbol[458] = MYR; // Malaysian Ringgit            
+            MVR = new Currency("Rufiyaa", "MVR", 462, false);
+            CurrencyByIsoCurrencySymbol[462] = MVR; // Rufiyaa            
+            MUR = new Currency("Mauritius Rupee", "MUR", 480, false);
+            CurrencyByIsoCurrencySymbol[480] = MUR; // Mauritius Rupee            
+            MXN = new Currency("Mexican Peso", "MXN", 484, false);
+            CurrencyByIsoCurrencySymbol[484] = MXN; // Mexican Peso            
+            MNT = new Currency("Tugrik", "MNT", 496, false);
+            CurrencyByIsoCurrencySymbol[496] = MNT; // Tugrik            
+            MDL = new Currency("Moldovan Leu", "MDL", 498, false);
+            CurrencyByIsoCurrencySymbol[498] = MDL; // Moldovan Leu            
+            MAD = new Currency("Moroccan Dirham", "MAD", 504, false);
+            CurrencyByIsoCurrencySymbol[504] = MAD; // Moroccan Dirham            
+            OMR = new Currency("Rial Omani", "OMR", 512, false);
+            CurrencyByIsoCurrencySymbol[512] = OMR; // Rial Omani            
+            NAD = new Currency("Namibia Dollar", "NAD", 516, false);
+            CurrencyByIsoCurrencySymbol[516] = NAD; // Namibia Dollar            
+            NPR = new Currency("Nepalese Rupee", "NPR", 524, false);
+            CurrencyByIsoCurrencySymbol[524] = NPR; // Nepalese Rupee            
+            ANG = new Currency("Netherlands Antillean Guilder", "ANG", 532, false);
+            CurrencyByIsoCurrencySymbol[532] = ANG; // Netherlands Antillean Guilder            
+            AWG = new Currency("Aruban Florin", "AWG", 533, false);
+            CurrencyByIsoCurrencySymbol[533] = AWG; // Aruban Florin            
+            VUV = new Currency("Vatu", "VUV", 548, false);
+            CurrencyByIsoCurrencySymbol[548] = VUV; // Vatu            
+            NZD = new Currency("New Zealand Dollar", "NZD", 554, false);
+            CurrencyByIsoCurrencySymbol[554] = NZD; // New Zealand Dollar            
+            NIO = new Currency("Cordoba Oro", "NIO", 558, false);
+            CurrencyByIsoCurrencySymbol[558] = NIO; // Cordoba Oro            
+            NGN = new Currency("Naira", "NGN", 566, false);
+            CurrencyByIsoCurrencySymbol[566] = NGN; // Naira            
+            NOK = new Currency("Norwegian Krone", "NOK", 578, false);
+            CurrencyByIsoCurrencySymbol[578] = NOK; // Norwegian Krone            
+            PKR = new Currency("Pakistan Rupee", "PKR", 586, false);
+            CurrencyByIsoCurrencySymbol[586] = PKR; // Pakistan Rupee            
+            PAB = new Currency("Balboa", "PAB", 590, false);
+            CurrencyByIsoCurrencySymbol[590] = PAB; // Balboa            
+            PGK = new Currency("Kina", "PGK", 598, false);
+            CurrencyByIsoCurrencySymbol[598] = PGK; // Kina            
+            PYG = new Currency("Guarani", "PYG", 600, false);
+            CurrencyByIsoCurrencySymbol[600] = PYG; // Guarani            
+            PEN = new Currency("Sol", "PEN", 604, false);
+            CurrencyByIsoCurrencySymbol[604] = PEN; // Sol            
+            PHP = new Currency("Philippine Peso", "PHP", 608, false);
+            CurrencyByIsoCurrencySymbol[608] = PHP; // Philippine Peso            
+            QAR = new Currency("Qatari Rial", "QAR", 634, false);
+            CurrencyByIsoCurrencySymbol[634] = QAR; // Qatari Rial            
+            RUB = new Currency("Russian Ruble", "RUB", 643, false);
+            CurrencyByIsoCurrencySymbol[643] = RUB; // Russian Ruble            
+            RWF = new Currency("Rwanda Franc", "RWF", 646, false);
+            CurrencyByIsoCurrencySymbol[646] = RWF; // Rwanda Franc            
+            SHP = new Currency("Saint Helena Pound", "SHP", 654, false);
+            CurrencyByIsoCurrencySymbol[654] = SHP; // Saint Helena Pound            
+            SAR = new Currency("Saudi Riyal", "SAR", 682, false);
+            CurrencyByIsoCurrencySymbol[682] = SAR; // Saudi Riyal            
+            SCR = new Currency("Seychelles Rupee", "SCR", 690, false);
+            CurrencyByIsoCurrencySymbol[690] = SCR; // Seychelles Rupee            
+            SGD = new Currency("Singapore Dollar", "SGD", 702, false);
+            CurrencyByIsoCurrencySymbol[702] = SGD; // Singapore Dollar            
+            VND = new Currency("Dong", "VND", 704, false);
+            CurrencyByIsoCurrencySymbol[704] = VND; // Dong            
+            SOS = new Currency("Somali Shilling", "SOS", 706, false);
+            CurrencyByIsoCurrencySymbol[706] = SOS; // Somali Shilling            
+            ZAR = new Currency("Rand", "ZAR", 710, false);
+            CurrencyByIsoCurrencySymbol[710] = ZAR; // Rand            
+            SSP = new Currency("South Sudanese Pound", "SSP", 728, false);
+            CurrencyByIsoCurrencySymbol[728] = SSP; // South Sudanese Pound            
+            SZL = new Currency("Lilangeni", "SZL", 748, false);
+            CurrencyByIsoCurrencySymbol[748] = SZL; // Lilangeni            
+            SEK = new Currency("Swedish Krona", "SEK", 752, false);
+            CurrencyByIsoCurrencySymbol[752] = SEK; // Swedish Krona            
+            CHF = new Currency("Swiss Franc", "CHF", 756, false);
+            CurrencyByIsoCurrencySymbol[756] = CHF; // Swiss Franc            
+            SYP = new Currency("Syrian Pound", "SYP", 760, false);
+            CurrencyByIsoCurrencySymbol[760] = SYP; // Syrian Pound            
+            THB = new Currency("Baht", "THB", 764, false);
+            CurrencyByIsoCurrencySymbol[764] = THB; // Baht            
+            TOP = new Currency("Pa&rsquo;anga", "TOP", 776, false);
+            CurrencyByIsoCurrencySymbol[776] = TOP; // Pa&rsquo;anga            
+            TTD = new Currency("Trinidad and Tobago Dollar", "TTD", 780, false);
+            CurrencyByIsoCurrencySymbol[780] = TTD; // Trinidad and Tobago Dollar            
+            AED = new Currency("UAE Dirham", "AED", 784, false);
+            CurrencyByIsoCurrencySymbol[784] = AED; // UAE Dirham            
+            TND = new Currency("Tunisian Dinar", "TND", 788, false);
+            CurrencyByIsoCurrencySymbol[788] = TND; // Tunisian Dinar            
+            UGX = new Currency("Uganda Shilling", "UGX", 800, false);
+            CurrencyByIsoCurrencySymbol[800] = UGX; // Uganda Shilling            
+            MKD = new Currency("Denar", "MKD", 807, false);
+            CurrencyByIsoCurrencySymbol[807] = MKD; // Denar            
+            EGP = new Currency("Egyptian Pound", "EGP", 818, false);
+            CurrencyByIsoCurrencySymbol[818] = EGP; // Egyptian Pound            
+            GBP = new Currency("Pound Sterling", "GBP", 826, false);
+            CurrencyByIsoCurrencySymbol[826] = GBP; // Pound Sterling            
+            TZS = new Currency("Tanzanian Shilling", "TZS", 834, false);
+            CurrencyByIsoCurrencySymbol[834] = TZS; // Tanzanian Shilling            
+            UYU = new Currency("Peso Uruguayo", "UYU", 858, false);
+            CurrencyByIsoCurrencySymbol[858] = UYU; // Peso Uruguayo            
+            UZS = new Currency("Uzbekistan Sum", "UZS", 860, false);
+            CurrencyByIsoCurrencySymbol[860] = UZS; // Uzbekistan Sum            
+            WST = new Currency("Tala", "WST", 882, false);
+            CurrencyByIsoCurrencySymbol[882] = WST; // Tala            
+            YER = new Currency("Yemeni Rial", "YER", 886, false);
+            CurrencyByIsoCurrencySymbol[886] = YER; // Yemeni Rial            
+            TWD = new Currency("New Taiwan Dollar", "TWD", 901, false);
+            CurrencyByIsoCurrencySymbol[901] = TWD; // New Taiwan Dollar            
+            ZWG = new Currency("Zimbabwe Gold", "ZWG", 924, false);
+            CurrencyByIsoCurrencySymbol[924] = ZWG; // Zimbabwe Gold            
+            SLE = new Currency("Leone", "SLE", 925, false);
+            CurrencyByIsoCurrencySymbol[925] = SLE; // Leone            
+            VED = new Currency("Bol&iacute;var Soberano", "VED", 926, false);
+            CurrencyByIsoCurrencySymbol[926] = VED; // Bol&iacute;var Soberano            
+            UYW = new Currency("Unidad Previsional", "UYW", 927, false);
+            CurrencyByIsoCurrencySymbol[927] = UYW; // Unidad Previsional            
+            VES = new Currency("Bol&iacute;var Soberano", "VES", 928, false);
+            CurrencyByIsoCurrencySymbol[928] = VES; // Bol&iacute;var Soberano            
+            MRU = new Currency("Ouguiya", "MRU", 929, false);
+            CurrencyByIsoCurrencySymbol[929] = MRU; // Ouguiya            
+            STN = new Currency("Dobra", "STN", 930, false);
+            CurrencyByIsoCurrencySymbol[930] = STN; // Dobra            
+            CUC = new Currency("Peso Convertible", "CUC", 931, false);
+            CurrencyByIsoCurrencySymbol[931] = CUC; // Peso Convertible            
+            ZWL = new Currency("Zimbabwe Dollar", "ZWL", 932, false);
+            CurrencyByIsoCurrencySymbol[932] = ZWL; // Zimbabwe Dollar            
+            BYN = new Currency("Belarusian Ruble", "BYN", 933, false);
+            CurrencyByIsoCurrencySymbol[933] = BYN; // Belarusian Ruble            
+            TMT = new Currency("Turkmenistan New Manat", "TMT", 934, false);
+            CurrencyByIsoCurrencySymbol[934] = TMT; // Turkmenistan New Manat            
+            GHS = new Currency("Ghana Cedi", "GHS", 936, false);
+            CurrencyByIsoCurrencySymbol[936] = GHS; // Ghana Cedi            
+            SDG = new Currency("Sudanese Pound", "SDG", 938, false);
+            CurrencyByIsoCurrencySymbol[938] = SDG; // Sudanese Pound            
+            UYI = new Currency("Uruguay Peso en Unidades Indexadas (UI)", "UYI", 940, true);
+            CurrencyByIsoCurrencySymbol[940] = UYI; // Uruguay Peso en Unidades Indexadas (UI)            
+            RSD = new Currency("Serbian Dinar", "RSD", 941, false);
+            CurrencyByIsoCurrencySymbol[941] = RSD; // Serbian Dinar            
+            MZN = new Currency("Mozambique Metical", "MZN", 943, false);
+            CurrencyByIsoCurrencySymbol[943] = MZN; // Mozambique Metical            
+            AZN = new Currency("Azerbaijan Manat", "AZN", 944, false);
+            CurrencyByIsoCurrencySymbol[944] = AZN; // Azerbaijan Manat            
+            RON = new Currency("Romanian Leu", "RON", 946, false);
+            CurrencyByIsoCurrencySymbol[946] = RON; // Romanian Leu            
+            CHE = new Currency("WIR Euro", "CHE", 947, true);
+            CurrencyByIsoCurrencySymbol[947] = CHE; // WIR Euro            
+            CHW = new Currency("WIR Franc", "CHW", 948, true);
+            CurrencyByIsoCurrencySymbol[948] = CHW; // WIR Franc            
+            TRY = new Currency("Turkish Lira", "TRY", 949, false);
+            CurrencyByIsoCurrencySymbol[949] = TRY; // Turkish Lira            
+            XAF = new Currency("CFA Franc BEAC", "XAF", 950, false);
+            CurrencyByIsoCurrencySymbol[950] = XAF; // CFA Franc BEAC            
+            XCD = new Currency("East Caribbean Dollar", "XCD", 951, false);
+            CurrencyByIsoCurrencySymbol[951] = XCD; // East Caribbean Dollar            
+            XOF = new Currency("CFA Franc BCEAO", "XOF", 952, false);
+            CurrencyByIsoCurrencySymbol[952] = XOF; // CFA Franc BCEAO            
+            XPF = new Currency("CFP Franc", "XPF", 953, false);
+            CurrencyByIsoCurrencySymbol[953] = XPF; // CFP Franc            
+            XBA = new Currency("Bond Markets Unit European Composite Unit (EURCO)", "XBA", 955, false);
+            CurrencyByIsoCurrencySymbol[955] = XBA; // Bond Markets Unit European Composite Unit (EURCO)            
+            XBB = new Currency("Bond Markets Unit European Monetary Unit (E.M.U.-6)", "XBB", 956, false);
+            CurrencyByIsoCurrencySymbol[956] = XBB; // Bond Markets Unit European Monetary Unit (E.M.U.-6)            
+            XBC = new Currency("Bond Markets Unit European Unit of Account 9 (E.U.A.-9)", "XBC", 957, false);
+            CurrencyByIsoCurrencySymbol[957] =
+                XBC; // Bond Markets Unit European Unit of Account 9 (E.U.A.-9)            
+            XBD = new Currency("Bond Markets Unit European Unit of Account 17 (E.U.A.-17)", "XBD", 958, false);
+            CurrencyByIsoCurrencySymbol[958] =
+                XBD; // Bond Markets Unit European Unit of Account 17 (E.U.A.-17)            
+            XAU = new Currency("Gold", "XAU", 959, false);
+            CurrencyByIsoCurrencySymbol[959] = XAU; // Gold            
+            XDR = new Currency("SDR (Special Drawing Right)", "XDR", 960, false);
+            CurrencyByIsoCurrencySymbol[960] = XDR; // SDR (Special Drawing Right)            
+            XAG = new Currency("Silver", "XAG", 961, false);
+            CurrencyByIsoCurrencySymbol[961] = XAG; // Silver            
+            XPT = new Currency("Platinum", "XPT", 962, false);
+            CurrencyByIsoCurrencySymbol[962] = XPT; // Platinum            
+            XTS = new Currency("Codes specifically reserved for testing purposes", "XTS", 963, false);
+            CurrencyByIsoCurrencySymbol[963] = XTS; // Codes specifically reserved for testing purposes            
+            XPD = new Currency("Palladium", "XPD", 964, false);
+            CurrencyByIsoCurrencySymbol[964] = XPD; // Palladium            
+            XUA = new Currency("ADB Unit of Account", "XUA", 965, false);
+            CurrencyByIsoCurrencySymbol[965] = XUA; // ADB Unit of Account            
+            ZMW = new Currency("Zambian Kwacha", "ZMW", 967, false);
+            CurrencyByIsoCurrencySymbol[967] = ZMW; // Zambian Kwacha            
+            SRD = new Currency("Surinam Dollar", "SRD", 968, false);
+            CurrencyByIsoCurrencySymbol[968] = SRD; // Surinam Dollar            
+            MGA = new Currency("Malagasy Ariary", "MGA", 969, false);
+            CurrencyByIsoCurrencySymbol[969] = MGA; // Malagasy Ariary            
+            COU = new Currency("Unidad de Valor Real", "COU", 970, true);
+            CurrencyByIsoCurrencySymbol[970] = COU; // Unidad de Valor Real            
+            AFN = new Currency("Afghani", "AFN", 971, false);
+            CurrencyByIsoCurrencySymbol[971] = AFN; // Afghani            
+            TJS = new Currency("Somoni", "TJS", 972, false);
+            CurrencyByIsoCurrencySymbol[972] = TJS; // Somoni            
+            AOA = new Currency("Kwanza", "AOA", 973, false);
+            CurrencyByIsoCurrencySymbol[973] = AOA; // Kwanza            
+            BGN = new Currency("Bulgarian Lev", "BGN", 975, false);
+            CurrencyByIsoCurrencySymbol[975] = BGN; // Bulgarian Lev            
+            CDF = new Currency("Congolese Franc", "CDF", 976, false);
+            CurrencyByIsoCurrencySymbol[976] = CDF; // Congolese Franc            
+            BAM = new Currency("Convertible Mark", "BAM", 977, false);
+            CurrencyByIsoCurrencySymbol[977] = BAM; // Convertible Mark            
+            EUR = new Currency("Euro", "EUR", 978, false);
+            CurrencyByIsoCurrencySymbol[978] = EUR; // Euro            
+            MXV = new Currency("Mexican Unidad de Inversion (UDI)", "MXV", 979, true);
+            CurrencyByIsoCurrencySymbol[979] = MXV; // Mexican Unidad de Inversion (UDI)            
+            UAH = new Currency("Hryvnia", "UAH", 980, false);
+            CurrencyByIsoCurrencySymbol[980] = UAH; // Hryvnia            
+            GEL = new Currency("Lari", "GEL", 981, false);
+            CurrencyByIsoCurrencySymbol[981] = GEL; // Lari            
+            BOV = new Currency("Mvdol", "BOV", 984, true);
+            CurrencyByIsoCurrencySymbol[984] = BOV; // Mvdol            
+            PLN = new Currency("Zloty", "PLN", 985, false);
+            CurrencyByIsoCurrencySymbol[985] = PLN; // Zloty            
+            BRL = new Currency("Brazilian Real", "BRL", 986, false);
+            CurrencyByIsoCurrencySymbol[986] = BRL; // Brazilian Real            
+            CLF = new Currency("Unidad de Fomento", "CLF", 990, true);
+            CurrencyByIsoCurrencySymbol[990] = CLF; // Unidad de Fomento            
+            XSU = new Currency("Sucre", "XSU", 994, false);
+            CurrencyByIsoCurrencySymbol[994] = XSU; // Sucre            
+            USN = new Currency("US Dollar (Next day)", "USN", 997, true);
+            CurrencyByIsoCurrencySymbol[997] = USN; // US Dollar (Next day)            
+            USS = new Currency("US Dollar (Same day)", "USS", 998, true);
+            CurrencyByIsoCurrencySymbol[998] = USS; // US Dollar (Same day)            
+            XXX = new Currency("The codes assigned for transactions where no currency is involved", "XXX", 999, false);
+            CurrencyByIsoCurrencySymbol[999] = XXX; // The codes assigned for transactions where no currency is involved
 
+            #endregion
 
-            foreach (var currencyEntry in CurrencyInfoByIsoCurrencySymbol.Values)
+            foreach (var currency in CurrencyByIsoCurrencySymbol.Values)
             {
-                var isoCurrencyCode = currencyEntry.IsoCurrencySymbol;
-                var currencySymbol = currencyEntry.CurrencySymbol;
+                var isoCurrencyCode = currency.IsoCurrencySymbol;
+                var currencySymbol = currency.CurrencySymbol;
+
+                CurrencyByIsoCurrencyCode[isoCurrencyCode] = currency;
 
                 if (LocalCultureIdsByIsoCurrencyCode.TryGetValue(isoCurrencyCode, out var localCultureIds))
                 {
                     foreach (var localCultureId in localCultureIds)
-                        IsoCurrencySymbolByLocalCultureId[localCultureId] = currencyEntry.IsoCurrencyCode;
+                        IsoCurrencySymbolByLocalCultureId[localCultureId] = currency.IsoCurrencyCode;
 
-                    LocalCultureIdsByIsoCurrencySymbol[currencyEntry.IsoCurrencyCode] = localCultureIds;
+                    LocalCultureIdsByIsoCurrencySymbol[currency.IsoCurrencyCode] = localCultureIds;
                 }
 
-                IsoCurrencySymbolByIsoCurrencyCode[isoCurrencyCode] = currencyEntry.IsoCurrencyCode;
+                IsoCurrencySymbolByIsoCurrencyCode[isoCurrencyCode] = currency.IsoCurrencyCode;
 
                 if (currencySymbol == null) continue;
 
@@ -1118,232 +1371,36 @@ namespace System
                     IsoCurrencySymbolsByCurrencySymbol[currencySymbol] = isoCurrencySymbols;
                 }
 
-                isoCurrencySymbols.Add(currencyEntry.IsoCurrencyCode);
+                isoCurrencySymbols.Add(currency.IsoCurrencyCode);
             }
-
-            All = new Currency(008);
-            Dzd = new Currency(012);
-            Ars = new Currency(032);
-            Aud = new Currency(036);
-            Bsd = new Currency(044);
-            Bhd = new Currency(048);
-            Bdt = new Currency(050);
-            Amd = new Currency(051);
-            Bbd = new Currency(052);
-            Bmd = new Currency(060);
-            Bob = new Currency(068);
-            Bwp = new Currency(072);
-            Bzd = new Currency(084);
-            Sbd = new Currency(090);
-            Bnd = new Currency(096);
-            Mmk = new Currency(104);
-            Bif = new Currency(108);
-            Khr = new Currency(116);
-            Cad = new Currency(124);
-            Cve = new Currency(132);
-            Kyd = new Currency(136);
-            Lkr = new Currency(144);
-            Clp = new Currency(152);
-            Cny = new Currency(156);
-            Cop = new Currency(170);
-            Kmf = new Currency(174);
-            Crc = new Currency(188);
-            Hrk = new Currency(191);
-            Cup = new Currency(192);
-            Czk = new Currency(203);
-            Dkk = new Currency(208);
-            Dop = new Currency(214);
-            Svc = new Currency(222);
-            Etb = new Currency(230);
-            Ern = new Currency(232);
-            Eek = new Currency(233);
-            Fkp = new Currency(238);
-            Fjd = new Currency(242);
-            Djf = new Currency(262);
-            Gmd = new Currency(270);
-            Gip = new Currency(292);
-            Gtq = new Currency(320);
-            Gnf = new Currency(324);
-            Gyd = new Currency(328);
-            Htg = new Currency(332);
-            Hnl = new Currency(340);
-            Hkd = new Currency(344);
-            Huf = new Currency(348);
-            Isk = new Currency(352);
-            Inr = new Currency(356);
-            Idr = new Currency(360);
-            Irr = new Currency(364);
-            Iqd = new Currency(368);
-            Ils = new Currency(376);
-            Jmd = new Currency(388);
-            Jpy = new Currency(392);
-            Kzt = new Currency(398);
-            Jod = new Currency(400);
-            Kes = new Currency(404);
-            Kpw = new Currency(408);
-            Krw = new Currency(410);
-            Kwd = new Currency(414);
-            Kgs = new Currency(417);
-            Lak = new Currency(418);
-            Lbp = new Currency(422);
-            Lvl = new Currency(428);
-            Lrd = new Currency(430);
-            Lyd = new Currency(434);
-            Ltl = new Currency(440);
-            Mop = new Currency(446);
-            Mwk = new Currency(454);
-            Myr = new Currency(458);
-            Mvr = new Currency(462);
-            Mro = new Currency(478);
-            Mur = new Currency(480);
-            Mxn = new Currency(484);
-            Mnt = new Currency(496);
-            Mdl = new Currency(498);
-            Mad = new Currency(504);
-            Omr = new Currency(512);
-            Npr = new Currency(524);
-            Ang = new Currency(532);
-            Awg = new Currency(533);
-            Vuv = new Currency(548);
-            Nzd = new Currency(554);
-            Nio = new Currency(558);
-            Ngn = new Currency(566);
-            Nok = new Currency(578);
-            Pkr = new Currency(586);
-            Pab = new Currency(590);
-            Pgk = new Currency(598);
-            Pyg = new Currency(600);
-            Pen = new Currency(604);
-            Php = new Currency(608);
-            Gwp = new Currency(624);
-            Qar = new Currency(634);
-            Rub = new Currency(643);
-            Rwf = new Currency(646);
-            Shp = new Currency(654);
-            Std = new Currency(678);
-            Sar = new Currency(682);
-            Scr = new Currency(690);
-            Sll = new Currency(694);
-            Sgd = new Currency(702);
-            Skk = new Currency(703);
-            Vnd = new Currency(704);
-            Sos = new Currency(706);
-            Zar = new Currency(710);
-            Zwd = new Currency(716);
-            Szl = new Currency(748);
-            Sek = new Currency(752);
-            Chf = new Currency(756);
-            Syp = new Currency(760);
-            Thb = new Currency(764);
-            Top = new Currency(776);
-            Ttd = new Currency(780);
-            Aed = new Currency(784);
-            Tnd = new Currency(788);
-            Tmm = new Currency(795);
-            Ugx = new Currency(800);
-            Mkd = new Currency(807);
-            Egp = new Currency(818);
-            Gbp = new Currency(826);
-            Tzs = new Currency(834);
-            Usd = new Currency(840);
-            Uyu = new Currency(858);
-            Uzs = new Currency(860);
-            Wst = new Currency(882);
-            Yer = new Currency(886);
-            Zmk = new Currency(894);
-            Twd = new Currency(901);
-            Ghs = new Currency(936);
-            Vef = new Currency(937);
-            Sdg = new Currency(938);
-            Rsd = new Currency(941);
-            Mzn = new Currency(943);
-            Azn = new Currency(944);
-            Ron = new Currency(946);
-            Try = new Currency(949);
-            Xaf = new Currency(950);
-            Xcd = new Currency(951);
-            Xof = new Currency(952);
-            Xpf = new Currency(953);
-            Xba = new Currency(955);
-            Xbb = new Currency(956);
-            Xbc = new Currency(957);
-            Xbd = new Currency(958);
-            Xau = new Currency(959);
-            Xdr = new Currency(960);
-            Xag = new Currency(961);
-            Xpt = new Currency(962);
-            Xts = new Currency(963);
-            Xpd = new Currency(964);
-            Srd = new Currency(968);
-            Mga = new Currency(969);
-            Afn = new Currency(971);
-            Tjs = new Currency(972);
-            Aoa = new Currency(973);
-            Byr = new Currency(974);
-            Bgn = new Currency(975);
-            Cdf = new Currency(976);
-            Bam = new Currency(977);
-            Eur = new Currency(978);
-            Uah = new Currency(980);
-            Gel = new Currency(981);
-            Pln = new Currency(985);
-            Brl = new Currency(986);
-            Xxx = new Currency(999);
         }
 
-        private static CurrencyInfo GetCurrencyInfo(int isoCurrencySymbol)
+        private static Currency GetCurrencyByIsoCurrencySymbol(int isoCurrencySymbol)
         {
             if (isoCurrencySymbol == 0)
             {
-                return Xxx._currencyInfo;
+                return None;
             }
 
-            if (!CurrencyInfoByIsoCurrencySymbol.TryGetValue(isoCurrencySymbol, out var currencyInfo))
+            if (!CurrencyByIsoCurrencySymbol.TryGetValue(isoCurrencySymbol, out var currency))
                 throw new InvalidOperationException("Unknown currency: " + isoCurrencySymbol +
-                                                    "numeric ISO 4217 currency code.");
+                                                    " numeric ISO 4217 currency Symbol.");
 
-            return currencyInfo;
+            return currency;
         }
 
-        public struct CurrencyInfo : IEquatable<CurrencyInfo>
+        private static Currency GetCurrencyByIsoCurrencyCode(string isoCurrencyCode)
         {
-            internal readonly string CurrencyName;
-            internal readonly string CurrencySymbol;
-            internal readonly string IsoCurrencySymbol;
-            internal readonly ushort IsoCurrencyCode;
-            internal readonly RegionInfo RegionInfo;
-            internal readonly NumberFormatInfo NumberFormatInfo;
-
-            internal CurrencyInfo(
-                string currencyName,
-                string isoCurrencySymbol,
-                ushort isoCurrencyCode)
+            if (isoCurrencyCode == null)
             {
-                CurrencyName = currencyName;
-                IsoCurrencyCode = isoCurrencyCode;
-                IsoCurrencySymbol = isoCurrencySymbol;
-                NumberFormatInfo = GetNumberFormatInfo(isoCurrencyCode);
-                RegionInfo = RegionInfoByIsoCurrencySymbol.GetValueOrDefault(isoCurrencySymbol);
-                if (RegionInfo != null)
-                {
-                    CurrencyName = RegionInfo.CurrencyEnglishName;
-                    CurrencySymbol = RegionInfo.CurrencySymbol;
-                    IsoCurrencySymbol = RegionInfo.ISOCurrencySymbol;
-                }
-                else
-                {
-                    CurrencySymbol = CurrencySymbolByIsoCurrencySymbol.GetValueOrDefault(isoCurrencySymbol);
-                }
+                return None;
             }
 
-            #region IEquatable<CurrencyInfo> Members
+            if (!CurrencyByIsoCurrencyCode.TryGetValue(isoCurrencyCode, out var currency))
+                throw new InvalidOperationException("Unknown currency: " + isoCurrencyCode +
+                                                    " ISO 4217 currency 3 letters code.");
 
-            public bool Equals(CurrencyInfo other)
-            {
-                return IsoCurrencyCode == other.IsoCurrencyCode;
-            }
-
-            #endregion
+            return currency;
         }
 
         private static NumberFormatInfo GetNumberFormatInfo(int isoCurrencyCode)
@@ -1364,56 +1421,109 @@ namespace System
                 throw new ArgumentException("Unknown iso currency code or currency symbol: " +
                                             isoCurrencyCodeOrCurrencySymbol);
 
-            _currencyInfo = currency._currencyInfo;
-            _isoCurrencyCode = currency._isoCurrencyCode;
+            this = currency;
         }
 
+        /// <summary>
+        ///      Try Parse
+        ///      by Iso Currency <see cref="Currency" /> Code (e.i. USD, GBP)
+        ///      then by Currency <see cref="Currency" /> Symbol (e.i. $, £)
+        /// </summary>
+        /// <returns>
+        ///     The out <see cref="Currency" /> which corresponds
+        ///     to the current Iso Currency Code Or Currency Symbol.
+        /// </returns>
         public static bool TryParse(string isoCurrencyCodeOrCurrencySymbol, out Currency currency)
         {
-            currency = None;
-
+            currency = XXX;
             isoCurrencyCodeOrCurrencySymbol = isoCurrencyCodeOrCurrencySymbol.Trim();
+            switch (isoCurrencyCodeOrCurrencySymbol.Length)
+            {
+                case 0:
+                    return false;
+                default:
+                    return TryParseByIsoCurrencyCode(isoCurrencyCodeOrCurrencySymbol, out currency)
+                           || TryParseByCurrencySymbol(isoCurrencyCodeOrCurrencySymbol, out currency);
+            }
+        }
 
-            if (IsoCurrencySymbolByIsoCurrencyCode.TryGetValue(isoCurrencyCodeOrCurrencySymbol,
+        /// <summary>
+        ///     Try Parse by Iso Currency <see cref="Currency" /> Code (e.i. USD, GBP)
+        /// </summary>
+        /// <returns>
+        ///     The out <see cref="Currency" /> which corresponds
+        ///     to the current Iso Currency Code.
+        /// </returns>
+        public static bool TryParseByIsoCurrencyCode(string isoCurrencyCode, out Currency currency)
+        {
+            if (!IsoCurrencySymbolByIsoCurrencyCode.TryGetValue(isoCurrencyCode,
                     out var isoCurrencySymbol))
             {
-                currency = new Currency(isoCurrencySymbol);
-                return true;
+                currency = XXX;
+                return false;
             }
 
-            if (!IsoCurrencySymbolsByCurrencySymbol.TryGetValue(isoCurrencyCodeOrCurrencySymbol,
+            currency = GetCurrencyByIsoCurrencySymbol(isoCurrencySymbol);
+            return true;
+        }
+
+        /// <summary>
+        ///      Try Parse by Currency <see cref="Currency" /> Symbol (e.i. $, £)
+        /// </summary>
+        /// <returns>
+        ///     The out <see cref="Currency" /> which corresponds
+        ///     to the current Currency Symbol.
+        /// </returns>
+        public static bool TryParseByCurrencySymbol(string currencySymbol, out Currency currency)
+        {
+            if (!IsoCurrencySymbolsByCurrencySymbol.TryGetValue(currencySymbol,
                     out var isoCurrencySymbols))
             {
+                currency = XXX;
                 return false;
             }
 
             if (IsoCurrencySymbolByLocalCultureId.TryGetValue(Thread.CurrentThread.CurrentCulture.LCID,
-                    out isoCurrencySymbol)
+                    out var isoCurrencySymbol)
                 && !isoCurrencySymbols.Contains(isoCurrencySymbol))
             {
                 isoCurrencySymbol = isoCurrencySymbols[0];
             }
 
-            currency = new Currency(isoCurrencySymbol);
+            currency = GetCurrencyByIsoCurrencySymbol(isoCurrencySymbol);
             return true;
         }
 
-        private CurrencyInfo _currencyInfo;
+        public readonly string CurrencyName;
+        public readonly string CurrencySymbol;
+        public readonly string IsoCurrencySymbol;
+        public readonly int IsoCurrencyCode;
+        public readonly RegionInfo RegionInfo;
+        public readonly NumberFormatInfo NumberFormatInfo;
+        public readonly bool IsFund;
 
-        public Currency(int isoCurrencyCode)
+        public Currency(string currencyName,
+            string isoCurrencySymbol,
+            ushort isoCurrencyCode,
+            bool isFund)
         {
-            _currencyInfo = GetCurrencyInfo(isoCurrencyCode);
-            _isoCurrencyCode = isoCurrencyCode;
+            CurrencyName = currencyName;
+            IsoCurrencyCode = isoCurrencyCode;
+            IsoCurrencySymbol = isoCurrencySymbol;
+            IsFund = isFund;
+            NumberFormatInfo = GetNumberFormatInfo(isoCurrencyCode);
+            RegionInfo = RegionInfoByIsoCurrencySymbol.GetValueOrDefault(isoCurrencySymbol);
+            if (RegionInfo != null)
+            {
+                CurrencyName = RegionInfo.CurrencyEnglishName;
+                CurrencySymbol = RegionInfo.CurrencySymbol;
+                IsoCurrencySymbol = RegionInfo.ISOCurrencySymbol;
+            }
+            else
+            {
+                CurrencySymbol = CurrencySymbolByIsoCurrencySymbol.GetValueOrDefault(isoCurrencySymbol);
+            }
         }
-
-
-        public string CurrencyName => _currencyInfo.CurrencyName;
-
-        public string CurrencySymbol => _currencyInfo.CurrencySymbol;
-
-        public string IsoCurrencySymbol => _currencyInfo.IsoCurrencySymbol;
-
-        public int IsoCurrencyCode => _currencyInfo.IsoCurrencyCode;
 
         /// <summary>
         ///     Creates a <see cref="Currency" /> instance from the
@@ -1441,10 +1551,9 @@ namespace System
         /// </returns>
         public static Currency FromCultureInfo(CultureInfo cultureInfo)
         {
-            int currencyId;
-
-            if (IsoCurrencySymbolByLocalCultureId.TryGetValue(cultureInfo.LCID, out currencyId))
-                return new Currency(currencyId);
+            if (IsoCurrencySymbolByLocalCultureId.TryGetValue(cultureInfo.LCID, out var localCultureId)
+                && CurrencyByIsoCurrencySymbol.TryGetValue(localCultureId, out var currency))
+                return currency;
 
             throw new InvalidOperationException("Unknown culture: " + cultureInfo);
         }
@@ -1489,31 +1598,30 @@ namespace System
             return !left.Equals(right);
         }
 
-
         public override int GetHashCode()
         {
-            return 609502847 ^ _isoCurrencyCode.GetHashCode();
+            return 609502847 ^ IsoCurrencyCode.GetHashCode();
         }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is Currency)) return false;
+            if (!(obj is Currency other)) return false;
 
-            var other = (Currency)obj;
             return Equals(other);
         }
 
         public override string ToString()
         {
-            return string.Format("{0} ({1})", CurrencyName, IsoCurrencySymbol);
+            return RegionInfo == null
+                ? $"{CurrencyName} #{IsoCurrencyCode} {IsoCurrencySymbol} {CurrencySymbol}"
+                : $"{CurrencyName} #{IsoCurrencyCode} {IsoCurrencySymbol} {CurrencySymbol} {RegionInfo}";
         }
-
 
         #region IEquatable<Currency> Members
 
         public bool Equals(Currency other)
         {
-            return _isoCurrencyCode == other._isoCurrencyCode;
+            return IsoCurrencyCode == other.IsoCurrencyCode;
         }
 
         #endregion
@@ -1522,9 +1630,7 @@ namespace System
 
         public object GetFormat(Type formatType)
         {
-            if (formatType != typeof(NumberFormatInfo)) return null;
-
-            return GetNumberFormatInfo(this._isoCurrencyCode);
+            return formatType != typeof(NumberFormatInfo) ? null : GetNumberFormatInfo(this.IsoCurrencyCode);
         }
 
         #endregion

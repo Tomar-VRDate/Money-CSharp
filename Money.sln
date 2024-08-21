@@ -1,9 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money", "Money\Money.csproj", "{F2416D95-7587-4634-8061-D6B01C6163DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money.Tests", "Money.Tests\Money.Tests.csproj", "{F11B6673-FDAF-4F81-8CD5-6E0BF3FA4350}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF7152EF-B340-4AC7-89FD-864324223A5C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XML", "XML", "{7EF9046B-8AAD-4EC9-9C5E-FADEAB66B2D5}"
+	ProjectSection(SolutionItems) = preProject
+		XML\Currencies.xml = XML\Currencies.xml
+		XML\https---www.six-group.com-dam-download-financial-information-data-center-iso-currrency-lists-list-one.xml.url = XML\https---www.six-group.com-dam-download-financial-information-data-center-iso-currrency-lists-list-one.xml.url
+		XML\list-one.xml = XML\list-one.xml
+		XML\Currencies.xslt = XML\Currencies.xslt
+		XML\Currency.xslt = XML\Currency.xslt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,5 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EF9046B-8AAD-4EC9-9C5E-FADEAB66B2D5} = {AF7152EF-B340-4AC7-89FD-864324223A5C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F989D27-D777-44E3-BB17-575F908DC674}
 	EndGlobalSection
 EndGlobal

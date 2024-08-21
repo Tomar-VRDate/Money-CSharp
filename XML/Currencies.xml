@@ -1,0 +1,1572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Currencies [
+        <!ELEMENT Currencies (Updated|SourceURL|Currency)*>
+        <!ELEMENT Updated (#PCDATA)>
+        <!ELEMENT SourceURL (#PCDATA)>
+        <!ELEMENT Currency (CurrencyName|IsoCurrencyCode|IsoCurrencySymbol|CountryNames|IsFund)*>
+        <!ELEMENT CurrencyName (#PCDATA)>
+        <!ELEMENT IsoCurrencyCode (#PCDATA)>
+        <!ELEMENT IsoCurrencySymbol (#PCDATA)>
+        <!ELEMENT CountryNames (CountryName)*>
+        <!ELEMENT CountryName (#PCDATA)>
+        <!ELEMENT IsFund (#PCDATA)>
+        ]>
+<Currencies>
+    <Updated>2024-08-21</Updated>
+    <SourceURL>https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml</SourceURL>
+    <Currency>
+        <CurrencyName>Lek</CurrencyName>
+        <IsoCurrencyCode>ALL</IsoCurrencyCode>
+        <IsoCurrencySymbol>008</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ALBANIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Algerian Dinar</CurrencyName>
+        <IsoCurrencyCode>DZD</IsoCurrencyCode>
+        <IsoCurrencySymbol>012</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ALGERIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Argentine Peso</CurrencyName>
+        <IsoCurrencyCode>ARS</IsoCurrencyCode>
+        <IsoCurrencySymbol>032</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ARGENTINA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Australian Dollar</CurrencyName>
+        <IsoCurrencyCode>AUD</IsoCurrencyCode>
+        <IsoCurrencySymbol>036</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>AUSTRALIA</CountryName>
+            <CountryName>CHRISTMAS ISLAND</CountryName>
+            <CountryName>COCOS (KEELING) ISLANDS (THE)</CountryName>
+            <CountryName>HEARD ISLAND AND McDONALD ISLANDS</CountryName>
+            <CountryName>KIRIBATI</CountryName>
+            <CountryName>NAURU</CountryName>
+            <CountryName>NORFOLK ISLAND</CountryName>
+            <CountryName>TUVALU</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bahamian Dollar</CurrencyName>
+        <IsoCurrencyCode>BSD</IsoCurrencyCode>
+        <IsoCurrencySymbol>044</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BAHAMAS (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bahraini Dinar</CurrencyName>
+        <IsoCurrencyCode>BHD</IsoCurrencyCode>
+        <IsoCurrencySymbol>048</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BAHRAIN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Taka</CurrencyName>
+        <IsoCurrencyCode>BDT</IsoCurrencyCode>
+        <IsoCurrencySymbol>050</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BANGLADESH</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Armenian Dram</CurrencyName>
+        <IsoCurrencyCode>AMD</IsoCurrencyCode>
+        <IsoCurrencySymbol>051</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ARMENIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Barbados Dollar</CurrencyName>
+        <IsoCurrencyCode>BBD</IsoCurrencyCode>
+        <IsoCurrencySymbol>052</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BARBADOS</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bermudian Dollar</CurrencyName>
+        <IsoCurrencyCode>BMD</IsoCurrencyCode>
+        <IsoCurrencySymbol>060</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BERMUDA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Ngultrum</CurrencyName>
+        <IsoCurrencyCode>BTN</IsoCurrencyCode>
+        <IsoCurrencySymbol>064</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BHUTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Boliviano</CurrencyName>
+        <IsoCurrencyCode>BOB</IsoCurrencyCode>
+        <IsoCurrencySymbol>068</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BOLIVIA (PLURINATIONAL STATE OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Pula</CurrencyName>
+        <IsoCurrencyCode>BWP</IsoCurrencyCode>
+        <IsoCurrencySymbol>072</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BOTSWANA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Belize Dollar</CurrencyName>
+        <IsoCurrencyCode>BZD</IsoCurrencyCode>
+        <IsoCurrencySymbol>084</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BELIZE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Solomon Islands Dollar</CurrencyName>
+        <IsoCurrencyCode>SBD</IsoCurrencyCode>
+        <IsoCurrencySymbol>090</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SOLOMON ISLANDS</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Brunei Dollar</CurrencyName>
+        <IsoCurrencyCode>BND</IsoCurrencyCode>
+        <IsoCurrencySymbol>096</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BRUNEI DARUSSALAM</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Kyat</CurrencyName>
+        <IsoCurrencyCode>MMK</IsoCurrencyCode>
+        <IsoCurrencySymbol>104</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MYANMAR</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Burundi Franc</CurrencyName>
+        <IsoCurrencyCode>BIF</IsoCurrencyCode>
+        <IsoCurrencySymbol>108</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BURUNDI</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Riel</CurrencyName>
+        <IsoCurrencyCode>KHR</IsoCurrencyCode>
+        <IsoCurrencySymbol>116</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CAMBODIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Canadian Dollar</CurrencyName>
+        <IsoCurrencyCode>CAD</IsoCurrencyCode>
+        <IsoCurrencySymbol>124</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CANADA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Cabo Verde Escudo</CurrencyName>
+        <IsoCurrencyCode>CVE</IsoCurrencyCode>
+        <IsoCurrencySymbol>132</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CABO VERDE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Cayman Islands Dollar</CurrencyName>
+        <IsoCurrencyCode>KYD</IsoCurrencyCode>
+        <IsoCurrencySymbol>136</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CAYMAN ISLANDS (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Sri Lanka Rupee</CurrencyName>
+        <IsoCurrencyCode>LKR</IsoCurrencyCode>
+        <IsoCurrencySymbol>144</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SRI LANKA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Chilean Peso</CurrencyName>
+        <IsoCurrencyCode>CLP</IsoCurrencyCode>
+        <IsoCurrencySymbol>152</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CHILE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Yuan Renminbi</CurrencyName>
+        <IsoCurrencyCode>CNY</IsoCurrencyCode>
+        <IsoCurrencySymbol>156</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CHINA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Colombian Peso</CurrencyName>
+        <IsoCurrencyCode>COP</IsoCurrencyCode>
+        <IsoCurrencySymbol>170</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>COLOMBIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Comorian Franc</CurrencyName>
+        <IsoCurrencyCode>KMF</IsoCurrencyCode>
+        <IsoCurrencySymbol>174</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>COMOROS (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Costa Rican Colon</CurrencyName>
+        <IsoCurrencyCode>CRC</IsoCurrencyCode>
+        <IsoCurrencySymbol>188</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>COSTA RICA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Cuban Peso</CurrencyName>
+        <IsoCurrencyCode>CUP</IsoCurrencyCode>
+        <IsoCurrencySymbol>192</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CUBA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Czech Koruna</CurrencyName>
+        <IsoCurrencyCode>CZK</IsoCurrencyCode>
+        <IsoCurrencySymbol>203</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CZECHIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Danish Krone</CurrencyName>
+        <IsoCurrencyCode>DKK</IsoCurrencyCode>
+        <IsoCurrencySymbol>208</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>DENMARK</CountryName>
+            <CountryName>FAROE ISLANDS (THE)</CountryName>
+            <CountryName>GREENLAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Dominican Peso</CurrencyName>
+        <IsoCurrencyCode>DOP</IsoCurrencyCode>
+        <IsoCurrencySymbol>214</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>DOMINICAN REPUBLIC (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>El Salvador Colon</CurrencyName>
+        <IsoCurrencyCode>SVC</IsoCurrencyCode>
+        <IsoCurrencySymbol>222</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>EL SALVADOR</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Ethiopian Birr</CurrencyName>
+        <IsoCurrencyCode>ETB</IsoCurrencyCode>
+        <IsoCurrencySymbol>230</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ETHIOPIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Nakfa</CurrencyName>
+        <IsoCurrencyCode>ERN</IsoCurrencyCode>
+        <IsoCurrencySymbol>232</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ERITREA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Falkland Islands Pound</CurrencyName>
+        <IsoCurrencyCode>FKP</IsoCurrencyCode>
+        <IsoCurrencySymbol>238</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>FALKLAND ISLANDS (THE) [MALVINAS]</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Fiji Dollar</CurrencyName>
+        <IsoCurrencyCode>FJD</IsoCurrencyCode>
+        <IsoCurrencySymbol>242</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>FIJI</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Djibouti Franc</CurrencyName>
+        <IsoCurrencyCode>DJF</IsoCurrencyCode>
+        <IsoCurrencySymbol>262</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>DJIBOUTI</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Dalasi</CurrencyName>
+        <IsoCurrencyCode>GMD</IsoCurrencyCode>
+        <IsoCurrencySymbol>270</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GAMBIA (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Gibraltar Pound</CurrencyName>
+        <IsoCurrencyCode>GIP</IsoCurrencyCode>
+        <IsoCurrencySymbol>292</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GIBRALTAR</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Quetzal</CurrencyName>
+        <IsoCurrencyCode>GTQ</IsoCurrencyCode>
+        <IsoCurrencySymbol>320</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GUATEMALA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Guinean Franc</CurrencyName>
+        <IsoCurrencyCode>GNF</IsoCurrencyCode>
+        <IsoCurrencySymbol>324</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GUINEA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Guyana Dollar</CurrencyName>
+        <IsoCurrencyCode>GYD</IsoCurrencyCode>
+        <IsoCurrencySymbol>328</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GUYANA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Gourde</CurrencyName>
+        <IsoCurrencyCode>HTG</IsoCurrencyCode>
+        <IsoCurrencySymbol>332</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>HAITI</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Lempira</CurrencyName>
+        <IsoCurrencyCode>HNL</IsoCurrencyCode>
+        <IsoCurrencySymbol>340</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>HONDURAS</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Hong Kong Dollar</CurrencyName>
+        <IsoCurrencyCode>HKD</IsoCurrencyCode>
+        <IsoCurrencySymbol>344</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>HONG KONG</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Forint</CurrencyName>
+        <IsoCurrencyCode>HUF</IsoCurrencyCode>
+        <IsoCurrencySymbol>348</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>HUNGARY</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Iceland Krona</CurrencyName>
+        <IsoCurrencyCode>ISK</IsoCurrencyCode>
+        <IsoCurrencySymbol>352</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ICELAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Indian Rupee</CurrencyName>
+        <IsoCurrencyCode>INR</IsoCurrencyCode>
+        <IsoCurrencySymbol>356</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BHUTAN</CountryName>
+            <CountryName>INDIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Rupiah</CurrencyName>
+        <IsoCurrencyCode>IDR</IsoCurrencyCode>
+        <IsoCurrencySymbol>360</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>INDONESIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Iranian Rial</CurrencyName>
+        <IsoCurrencyCode>IRR</IsoCurrencyCode>
+        <IsoCurrencySymbol>364</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>IRAN (ISLAMIC REPUBLIC OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Iraqi Dinar</CurrencyName>
+        <IsoCurrencyCode>IQD</IsoCurrencyCode>
+        <IsoCurrencySymbol>368</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>IRAQ</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>New Israeli Sheqel</CurrencyName>
+        <IsoCurrencyCode>ILS</IsoCurrencyCode>
+        <IsoCurrencySymbol>376</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ISRAEL</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Jamaican Dollar</CurrencyName>
+        <IsoCurrencyCode>JMD</IsoCurrencyCode>
+        <IsoCurrencySymbol>388</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>JAMAICA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Yen</CurrencyName>
+        <IsoCurrencyCode>JPY</IsoCurrencyCode>
+        <IsoCurrencySymbol>392</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>JAPAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Tenge</CurrencyName>
+        <IsoCurrencyCode>KZT</IsoCurrencyCode>
+        <IsoCurrencySymbol>398</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>KAZAKHSTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Jordanian Dinar</CurrencyName>
+        <IsoCurrencyCode>JOD</IsoCurrencyCode>
+        <IsoCurrencySymbol>400</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>JORDAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Kenyan Shilling</CurrencyName>
+        <IsoCurrencyCode>KES</IsoCurrencyCode>
+        <IsoCurrencySymbol>404</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>KENYA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>North Korean Won</CurrencyName>
+        <IsoCurrencyCode>KPW</IsoCurrencyCode>
+        <IsoCurrencySymbol>408</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>KOREA (THE DEMOCRATIC PEOPLE’S REPUBLIC OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Won</CurrencyName>
+        <IsoCurrencyCode>KRW</IsoCurrencyCode>
+        <IsoCurrencySymbol>410</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>KOREA (THE REPUBLIC OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Kuwaiti Dinar</CurrencyName>
+        <IsoCurrencyCode>KWD</IsoCurrencyCode>
+        <IsoCurrencySymbol>414</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>KUWAIT</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Som</CurrencyName>
+        <IsoCurrencyCode>KGS</IsoCurrencyCode>
+        <IsoCurrencySymbol>417</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>KYRGYZSTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Lao Kip</CurrencyName>
+        <IsoCurrencyCode>LAK</IsoCurrencyCode>
+        <IsoCurrencySymbol>418</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LAO PEOPLE’S DEMOCRATIC REPUBLIC (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Lebanese Pound</CurrencyName>
+        <IsoCurrencyCode>LBP</IsoCurrencyCode>
+        <IsoCurrencySymbol>422</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LEBANON</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Loti</CurrencyName>
+        <IsoCurrencyCode>LSL</IsoCurrencyCode>
+        <IsoCurrencySymbol>426</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LESOTHO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Liberian Dollar</CurrencyName>
+        <IsoCurrencyCode>LRD</IsoCurrencyCode>
+        <IsoCurrencySymbol>430</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LIBERIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Libyan Dinar</CurrencyName>
+        <IsoCurrencyCode>LYD</IsoCurrencyCode>
+        <IsoCurrencySymbol>434</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LIBYA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Pataca</CurrencyName>
+        <IsoCurrencyCode>MOP</IsoCurrencyCode>
+        <IsoCurrencySymbol>446</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MACAO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Malawi Kwacha</CurrencyName>
+        <IsoCurrencyCode>MWK</IsoCurrencyCode>
+        <IsoCurrencySymbol>454</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MALAWI</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Malaysian Ringgit</CurrencyName>
+        <IsoCurrencyCode>MYR</IsoCurrencyCode>
+        <IsoCurrencySymbol>458</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MALAYSIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Rufiyaa</CurrencyName>
+        <IsoCurrencyCode>MVR</IsoCurrencyCode>
+        <IsoCurrencySymbol>462</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MALDIVES</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Mauritius Rupee</CurrencyName>
+        <IsoCurrencyCode>MUR</IsoCurrencyCode>
+        <IsoCurrencySymbol>480</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MAURITIUS</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Mexican Peso</CurrencyName>
+        <IsoCurrencyCode>MXN</IsoCurrencyCode>
+        <IsoCurrencySymbol>484</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MEXICO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Tugrik</CurrencyName>
+        <IsoCurrencyCode>MNT</IsoCurrencyCode>
+        <IsoCurrencySymbol>496</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MONGOLIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Moldovan Leu</CurrencyName>
+        <IsoCurrencyCode>MDL</IsoCurrencyCode>
+        <IsoCurrencySymbol>498</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MOLDOVA (THE REPUBLIC OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Moroccan Dirham</CurrencyName>
+        <IsoCurrencyCode>MAD</IsoCurrencyCode>
+        <IsoCurrencySymbol>504</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MOROCCO</CountryName>
+            <CountryName>WESTERN SAHARA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Rial Omani</CurrencyName>
+        <IsoCurrencyCode>OMR</IsoCurrencyCode>
+        <IsoCurrencySymbol>512</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>OMAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Namibia Dollar</CurrencyName>
+        <IsoCurrencyCode>NAD</IsoCurrencyCode>
+        <IsoCurrencySymbol>516</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>NAMIBIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Nepalese Rupee</CurrencyName>
+        <IsoCurrencyCode>NPR</IsoCurrencyCode>
+        <IsoCurrencySymbol>524</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>NEPAL</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Netherlands Antillean Guilder</CurrencyName>
+        <IsoCurrencyCode>ANG</IsoCurrencyCode>
+        <IsoCurrencySymbol>532</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CURAÇAO</CountryName>
+            <CountryName>SINT MAARTEN (DUTCH PART)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Aruban Florin</CurrencyName>
+        <IsoCurrencyCode>AWG</IsoCurrencyCode>
+        <IsoCurrencySymbol>533</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ARUBA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Vatu</CurrencyName>
+        <IsoCurrencyCode>VUV</IsoCurrencyCode>
+        <IsoCurrencySymbol>548</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>VANUATU</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>New Zealand Dollar</CurrencyName>
+        <IsoCurrencyCode>NZD</IsoCurrencyCode>
+        <IsoCurrencySymbol>554</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>COOK ISLANDS (THE)</CountryName>
+            <CountryName>NEW ZEALAND</CountryName>
+            <CountryName>NIUE</CountryName>
+            <CountryName>PITCAIRN</CountryName>
+            <CountryName>TOKELAU</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Cordoba Oro</CurrencyName>
+        <IsoCurrencyCode>NIO</IsoCurrencyCode>
+        <IsoCurrencySymbol>558</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>NICARAGUA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Naira</CurrencyName>
+        <IsoCurrencyCode>NGN</IsoCurrencyCode>
+        <IsoCurrencySymbol>566</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>NIGERIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Norwegian Krone</CurrencyName>
+        <IsoCurrencyCode>NOK</IsoCurrencyCode>
+        <IsoCurrencySymbol>578</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BOUVET ISLAND</CountryName>
+            <CountryName>NORWAY</CountryName>
+            <CountryName>SVALBARD AND JAN MAYEN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Pakistan Rupee</CurrencyName>
+        <IsoCurrencyCode>PKR</IsoCurrencyCode>
+        <IsoCurrencySymbol>586</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>PAKISTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Balboa</CurrencyName>
+        <IsoCurrencyCode>PAB</IsoCurrencyCode>
+        <IsoCurrencySymbol>590</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>PANAMA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Kina</CurrencyName>
+        <IsoCurrencyCode>PGK</IsoCurrencyCode>
+        <IsoCurrencySymbol>598</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>PAPUA NEW GUINEA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Guarani</CurrencyName>
+        <IsoCurrencyCode>PYG</IsoCurrencyCode>
+        <IsoCurrencySymbol>600</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>PARAGUAY</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Sol</CurrencyName>
+        <IsoCurrencyCode>PEN</IsoCurrencyCode>
+        <IsoCurrencySymbol>604</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>PERU</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Philippine Peso</CurrencyName>
+        <IsoCurrencyCode>PHP</IsoCurrencyCode>
+        <IsoCurrencySymbol>608</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>PHILIPPINES (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Qatari Rial</CurrencyName>
+        <IsoCurrencyCode>QAR</IsoCurrencyCode>
+        <IsoCurrencySymbol>634</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>QATAR</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Russian Ruble</CurrencyName>
+        <IsoCurrencyCode>RUB</IsoCurrencyCode>
+        <IsoCurrencySymbol>643</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>RUSSIAN FEDERATION (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Rwanda Franc</CurrencyName>
+        <IsoCurrencyCode>RWF</IsoCurrencyCode>
+        <IsoCurrencySymbol>646</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>RWANDA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Saint Helena Pound</CurrencyName>
+        <IsoCurrencyCode>SHP</IsoCurrencyCode>
+        <IsoCurrencySymbol>654</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Saudi Riyal</CurrencyName>
+        <IsoCurrencyCode>SAR</IsoCurrencyCode>
+        <IsoCurrencySymbol>682</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SAUDI ARABIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Seychelles Rupee</CurrencyName>
+        <IsoCurrencyCode>SCR</IsoCurrencyCode>
+        <IsoCurrencySymbol>690</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SEYCHELLES</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Singapore Dollar</CurrencyName>
+        <IsoCurrencyCode>SGD</IsoCurrencyCode>
+        <IsoCurrencySymbol>702</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SINGAPORE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Dong</CurrencyName>
+        <IsoCurrencyCode>VND</IsoCurrencyCode>
+        <IsoCurrencySymbol>704</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>VIET NAM</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Somali Shilling</CurrencyName>
+        <IsoCurrencyCode>SOS</IsoCurrencyCode>
+        <IsoCurrencySymbol>706</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SOMALIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Rand</CurrencyName>
+        <IsoCurrencyCode>ZAR</IsoCurrencyCode>
+        <IsoCurrencySymbol>710</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LESOTHO</CountryName>
+            <CountryName>NAMIBIA</CountryName>
+            <CountryName>SOUTH AFRICA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>South Sudanese Pound</CurrencyName>
+        <IsoCurrencyCode>SSP</IsoCurrencyCode>
+        <IsoCurrencySymbol>728</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SOUTH SUDAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Lilangeni</CurrencyName>
+        <IsoCurrencyCode>SZL</IsoCurrencyCode>
+        <IsoCurrencySymbol>748</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ESWATINI</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Swedish Krona</CurrencyName>
+        <IsoCurrencyCode>SEK</IsoCurrencyCode>
+        <IsoCurrencySymbol>752</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SWEDEN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Swiss Franc</CurrencyName>
+        <IsoCurrencyCode>CHF</IsoCurrencyCode>
+        <IsoCurrencySymbol>756</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>LIECHTENSTEIN</CountryName>
+            <CountryName>SWITZERLAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Syrian Pound</CurrencyName>
+        <IsoCurrencyCode>SYP</IsoCurrencyCode>
+        <IsoCurrencySymbol>760</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SYRIAN ARAB REPUBLIC</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Baht</CurrencyName>
+        <IsoCurrencyCode>THB</IsoCurrencyCode>
+        <IsoCurrencySymbol>764</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>THAILAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Pa’anga</CurrencyName>
+        <IsoCurrencyCode>TOP</IsoCurrencyCode>
+        <IsoCurrencySymbol>776</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TONGA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Trinidad and Tobago Dollar</CurrencyName>
+        <IsoCurrencyCode>TTD</IsoCurrencyCode>
+        <IsoCurrencySymbol>780</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TRINIDAD AND TOBAGO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>UAE Dirham</CurrencyName>
+        <IsoCurrencyCode>AED</IsoCurrencyCode>
+        <IsoCurrencySymbol>784</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>UNITED ARAB EMIRATES (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Tunisian Dinar</CurrencyName>
+        <IsoCurrencyCode>TND</IsoCurrencyCode>
+        <IsoCurrencySymbol>788</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TUNISIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Uganda Shilling</CurrencyName>
+        <IsoCurrencyCode>UGX</IsoCurrencyCode>
+        <IsoCurrencySymbol>800</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>UGANDA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Denar</CurrencyName>
+        <IsoCurrencyCode>MKD</IsoCurrencyCode>
+        <IsoCurrencySymbol>807</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>NORTH MACEDONIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Egyptian Pound</CurrencyName>
+        <IsoCurrencyCode>EGP</IsoCurrencyCode>
+        <IsoCurrencySymbol>818</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>EGYPT</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Pound Sterling</CurrencyName>
+        <IsoCurrencyCode>GBP</IsoCurrencyCode>
+        <IsoCurrencySymbol>826</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GUERNSEY</CountryName>
+            <CountryName>ISLE OF MAN</CountryName>
+            <CountryName>JERSEY</CountryName>
+            <CountryName>UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Tanzanian Shilling</CurrencyName>
+        <IsoCurrencyCode>TZS</IsoCurrencyCode>
+        <IsoCurrencySymbol>834</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TANZANIA, UNITED REPUBLIC OF</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>US Dollar</CurrencyName>
+        <IsoCurrencyCode>USD</IsoCurrencyCode>
+        <IsoCurrencySymbol>840</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>AMERICAN SAMOA</CountryName>
+            <CountryName>BONAIRE, SINT EUSTATIUS AND SABA</CountryName>
+            <CountryName>BRITISH INDIAN OCEAN TERRITORY (THE)</CountryName>
+            <CountryName>ECUADOR</CountryName>
+            <CountryName>EL SALVADOR</CountryName>
+            <CountryName>GUAM</CountryName>
+            <CountryName>HAITI</CountryName>
+            <CountryName>MARSHALL ISLANDS (THE)</CountryName>
+            <CountryName>MICRONESIA (FEDERATED STATES OF)</CountryName>
+            <CountryName>NORTHERN MARIANA ISLANDS (THE)</CountryName>
+            <CountryName>PALAU</CountryName>
+            <CountryName>PANAMA</CountryName>
+            <CountryName>PUERTO RICO</CountryName>
+            <CountryName>TIMOR-LESTE</CountryName>
+            <CountryName>TURKS AND CAICOS ISLANDS (THE)</CountryName>
+            <CountryName>UNITED STATES MINOR OUTLYING ISLANDS (THE)</CountryName>
+            <CountryName>UNITED STATES OF AMERICA (THE)</CountryName>
+            <CountryName>VIRGIN ISLANDS (BRITISH)</CountryName>
+            <CountryName>VIRGIN ISLANDS (U.S.)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Peso Uruguayo</CurrencyName>
+        <IsoCurrencyCode>UYU</IsoCurrencyCode>
+        <IsoCurrencySymbol>858</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>URUGUAY</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Uzbekistan Sum</CurrencyName>
+        <IsoCurrencyCode>UZS</IsoCurrencyCode>
+        <IsoCurrencySymbol>860</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>UZBEKISTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Tala</CurrencyName>
+        <IsoCurrencyCode>WST</IsoCurrencyCode>
+        <IsoCurrencySymbol>882</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SAMOA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Yemeni Rial</CurrencyName>
+        <IsoCurrencyCode>YER</IsoCurrencyCode>
+        <IsoCurrencySymbol>886</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>YEMEN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>New Taiwan Dollar</CurrencyName>
+        <IsoCurrencyCode>TWD</IsoCurrencyCode>
+        <IsoCurrencySymbol>901</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TAIWAN (PROVINCE OF CHINA)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Zimbabwe Gold</CurrencyName>
+        <IsoCurrencyCode>ZWG</IsoCurrencyCode>
+        <IsoCurrencySymbol>924</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZIMBABWE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Leone</CurrencyName>
+        <IsoCurrencyCode>SLE</IsoCurrencyCode>
+        <IsoCurrencySymbol>925</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SIERRA LEONE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bolívar Soberano</CurrencyName>
+        <IsoCurrencyCode>VED</IsoCurrencyCode>
+        <IsoCurrencySymbol>926</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>VENEZUELA (BOLIVARIAN REPUBLIC OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Unidad Previsional</CurrencyName>
+        <IsoCurrencyCode>UYW</IsoCurrencyCode>
+        <IsoCurrencySymbol>927</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>URUGUAY</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bolívar Soberano</CurrencyName>
+        <IsoCurrencyCode>VES</IsoCurrencyCode>
+        <IsoCurrencySymbol>928</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>VENEZUELA (BOLIVARIAN REPUBLIC OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Ouguiya</CurrencyName>
+        <IsoCurrencyCode>MRU</IsoCurrencyCode>
+        <IsoCurrencySymbol>929</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MAURITANIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Dobra</CurrencyName>
+        <IsoCurrencyCode>STN</IsoCurrencyCode>
+        <IsoCurrencySymbol>930</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SAO TOME AND PRINCIPE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Peso Convertible</CurrencyName>
+        <IsoCurrencyCode>CUC</IsoCurrencyCode>
+        <IsoCurrencySymbol>931</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CUBA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Zimbabwe Dollar</CurrencyName>
+        <IsoCurrencyCode>ZWL</IsoCurrencyCode>
+        <IsoCurrencySymbol>932</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZIMBABWE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Belarusian Ruble</CurrencyName>
+        <IsoCurrencyCode>BYN</IsoCurrencyCode>
+        <IsoCurrencySymbol>933</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BELARUS</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Turkmenistan New Manat</CurrencyName>
+        <IsoCurrencyCode>TMT</IsoCurrencyCode>
+        <IsoCurrencySymbol>934</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TURKMENISTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Ghana Cedi</CurrencyName>
+        <IsoCurrencyCode>GHS</IsoCurrencyCode>
+        <IsoCurrencySymbol>936</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GHANA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Sudanese Pound</CurrencyName>
+        <IsoCurrencyCode>SDG</IsoCurrencyCode>
+        <IsoCurrencySymbol>938</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SUDAN (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Uruguay Peso en Unidades Indexadas (UI)</CurrencyName>
+        <IsoCurrencyCode>UYI</IsoCurrencyCode>
+        <IsoCurrencySymbol>940</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>URUGUAY</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Serbian Dinar</CurrencyName>
+        <IsoCurrencyCode>RSD</IsoCurrencyCode>
+        <IsoCurrencySymbol>941</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SERBIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Mozambique Metical</CurrencyName>
+        <IsoCurrencyCode>MZN</IsoCurrencyCode>
+        <IsoCurrencySymbol>943</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MOZAMBIQUE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Azerbaijan Manat</CurrencyName>
+        <IsoCurrencyCode>AZN</IsoCurrencyCode>
+        <IsoCurrencySymbol>944</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>AZERBAIJAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Romanian Leu</CurrencyName>
+        <IsoCurrencyCode>RON</IsoCurrencyCode>
+        <IsoCurrencySymbol>946</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ROMANIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>WIR Euro</CurrencyName>
+        <IsoCurrencyCode>CHE</IsoCurrencyCode>
+        <IsoCurrencySymbol>947</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>SWITZERLAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>WIR Franc</CurrencyName>
+        <IsoCurrencyCode>CHW</IsoCurrencyCode>
+        <IsoCurrencySymbol>948</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>SWITZERLAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Turkish Lira</CurrencyName>
+        <IsoCurrencyCode>TRY</IsoCurrencyCode>
+        <IsoCurrencySymbol>949</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TÜRKİYE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>CFA Franc BEAC</CurrencyName>
+        <IsoCurrencyCode>XAF</IsoCurrencyCode>
+        <IsoCurrencySymbol>950</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CAMEROON</CountryName>
+            <CountryName>CENTRAL AFRICAN REPUBLIC (THE)</CountryName>
+            <CountryName>CHAD</CountryName>
+            <CountryName>CONGO (THE)</CountryName>
+            <CountryName>EQUATORIAL GUINEA</CountryName>
+            <CountryName>GABON</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>East Caribbean Dollar</CurrencyName>
+        <IsoCurrencyCode>XCD</IsoCurrencyCode>
+        <IsoCurrencySymbol>951</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ANGUILLA</CountryName>
+            <CountryName>ANTIGUA AND BARBUDA</CountryName>
+            <CountryName>DOMINICA</CountryName>
+            <CountryName>GRENADA</CountryName>
+            <CountryName>MONTSERRAT</CountryName>
+            <CountryName>SAINT KITTS AND NEVIS</CountryName>
+            <CountryName>SAINT LUCIA</CountryName>
+            <CountryName>SAINT VINCENT AND THE GRENADINES</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>CFA Franc BCEAO</CurrencyName>
+        <IsoCurrencyCode>XOF</IsoCurrencyCode>
+        <IsoCurrencySymbol>952</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BENIN</CountryName>
+            <CountryName>BURKINA FASO</CountryName>
+            <CountryName>CÔTE D'IVOIRE</CountryName>
+            <CountryName>GUINEA-BISSAU</CountryName>
+            <CountryName>MALI</CountryName>
+            <CountryName>NIGER (THE)</CountryName>
+            <CountryName>SENEGAL</CountryName>
+            <CountryName>TOGO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>CFP Franc</CurrencyName>
+        <IsoCurrencyCode>XPF</IsoCurrencyCode>
+        <IsoCurrencySymbol>953</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>FRENCH POLYNESIA</CountryName>
+            <CountryName>NEW CALEDONIA</CountryName>
+            <CountryName>WALLIS AND FUTUNA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bond Markets Unit European Composite Unit (EURCO)</CurrencyName>
+        <IsoCurrencyCode>XBA</IsoCurrencyCode>
+        <IsoCurrencySymbol>955</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ01_Bond Markets Unit European_EURCO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bond Markets Unit European Monetary Unit (E.M.U.-6)</CurrencyName>
+        <IsoCurrencyCode>XBB</IsoCurrencyCode>
+        <IsoCurrencySymbol>956</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ02_Bond Markets Unit European_EMU-6</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bond Markets Unit European Unit of Account 9 (E.U.A.-9)</CurrencyName>
+        <IsoCurrencyCode>XBC</IsoCurrencyCode>
+        <IsoCurrencySymbol>957</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ03_Bond Markets Unit European_EUA-9</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bond Markets Unit European Unit of Account 17 (E.U.A.-17)</CurrencyName>
+        <IsoCurrencyCode>XBD</IsoCurrencyCode>
+        <IsoCurrencySymbol>958</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ04_Bond Markets Unit European_EUA-17</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Gold</CurrencyName>
+        <IsoCurrencyCode>XAU</IsoCurrencyCode>
+        <IsoCurrencySymbol>959</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ08_Gold</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>SDR (Special Drawing Right)</CurrencyName>
+        <IsoCurrencyCode>XDR</IsoCurrencyCode>
+        <IsoCurrencySymbol>960</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>INTERNATIONAL MONETARY FUND (IMF) </CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Silver</CurrencyName>
+        <IsoCurrencyCode>XAG</IsoCurrencyCode>
+        <IsoCurrencySymbol>961</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ11_Silver</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Platinum</CurrencyName>
+        <IsoCurrencyCode>XPT</IsoCurrencyCode>
+        <IsoCurrencySymbol>962</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ10_Platinum</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Codes specifically reserved for testing purposes</CurrencyName>
+        <IsoCurrencyCode>XTS</IsoCurrencyCode>
+        <IsoCurrencySymbol>963</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ06_Testing_Code</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Palladium</CurrencyName>
+        <IsoCurrencyCode>XPD</IsoCurrencyCode>
+        <IsoCurrencySymbol>964</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ09_Palladium</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>ADB Unit of Account</CurrencyName>
+        <IsoCurrencyCode>XUA</IsoCurrencyCode>
+        <IsoCurrencySymbol>965</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MEMBER COUNTRIES OF THE AFRICAN DEVELOPMENT BANK GROUP</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Zambian Kwacha</CurrencyName>
+        <IsoCurrencyCode>ZMW</IsoCurrencyCode>
+        <IsoCurrencySymbol>967</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZAMBIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Surinam Dollar</CurrencyName>
+        <IsoCurrencyCode>SRD</IsoCurrencyCode>
+        <IsoCurrencySymbol>968</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SURINAME</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Malagasy Ariary</CurrencyName>
+        <IsoCurrencyCode>MGA</IsoCurrencyCode>
+        <IsoCurrencySymbol>969</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>MADAGASCAR</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Unidad de Valor Real</CurrencyName>
+        <IsoCurrencyCode>COU</IsoCurrencyCode>
+        <IsoCurrencySymbol>970</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>COLOMBIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Afghani</CurrencyName>
+        <IsoCurrencyCode>AFN</IsoCurrencyCode>
+        <IsoCurrencySymbol>971</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>AFGHANISTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Somoni</CurrencyName>
+        <IsoCurrencyCode>TJS</IsoCurrencyCode>
+        <IsoCurrencySymbol>972</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>TAJIKISTAN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Kwanza</CurrencyName>
+        <IsoCurrencyCode>AOA</IsoCurrencyCode>
+        <IsoCurrencySymbol>973</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ANGOLA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Bulgarian Lev</CurrencyName>
+        <IsoCurrencyCode>BGN</IsoCurrencyCode>
+        <IsoCurrencySymbol>975</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BULGARIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Congolese Franc</CurrencyName>
+        <IsoCurrencyCode>CDF</IsoCurrencyCode>
+        <IsoCurrencySymbol>976</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>CONGO (THE DEMOCRATIC REPUBLIC OF THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Convertible Mark</CurrencyName>
+        <IsoCurrencyCode>BAM</IsoCurrencyCode>
+        <IsoCurrencySymbol>977</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BOSNIA AND HERZEGOVINA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Euro</CurrencyName>
+        <IsoCurrencyCode>EUR</IsoCurrencyCode>
+        <IsoCurrencySymbol>978</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ÅLAND ISLANDS</CountryName>
+            <CountryName>ANDORRA</CountryName>
+            <CountryName>AUSTRIA</CountryName>
+            <CountryName>BELGIUM</CountryName>
+            <CountryName>CROATIA</CountryName>
+            <CountryName>CYPRUS</CountryName>
+            <CountryName>ESTONIA</CountryName>
+            <CountryName>EUROPEAN UNION</CountryName>
+            <CountryName>FINLAND</CountryName>
+            <CountryName>FRANCE</CountryName>
+            <CountryName>FRENCH GUIANA</CountryName>
+            <CountryName>FRENCH SOUTHERN TERRITORIES (THE)</CountryName>
+            <CountryName>GERMANY</CountryName>
+            <CountryName>GREECE</CountryName>
+            <CountryName>GUADELOUPE</CountryName>
+            <CountryName>HOLY SEE (THE)</CountryName>
+            <CountryName>IRELAND</CountryName>
+            <CountryName>ITALY</CountryName>
+            <CountryName>LATVIA</CountryName>
+            <CountryName>LITHUANIA</CountryName>
+            <CountryName>LUXEMBOURG</CountryName>
+            <CountryName>MALTA</CountryName>
+            <CountryName>MARTINIQUE</CountryName>
+            <CountryName>MAYOTTE</CountryName>
+            <CountryName>MONACO</CountryName>
+            <CountryName>MONTENEGRO</CountryName>
+            <CountryName>NETHERLANDS (THE)</CountryName>
+            <CountryName>PORTUGAL</CountryName>
+            <CountryName>RÉUNION</CountryName>
+            <CountryName>SAINT BARTHÉLEMY</CountryName>
+            <CountryName>SAINT MARTIN (FRENCH PART)</CountryName>
+            <CountryName>SAINT PIERRE AND MIQUELON</CountryName>
+            <CountryName>SAN MARINO</CountryName>
+            <CountryName>SLOVAKIA</CountryName>
+            <CountryName>SLOVENIA</CountryName>
+            <CountryName>SPAIN</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Mexican Unidad de Inversion (UDI)</CurrencyName>
+        <IsoCurrencyCode>MXV</IsoCurrencyCode>
+        <IsoCurrencySymbol>979</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>MEXICO</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Hryvnia</CurrencyName>
+        <IsoCurrencyCode>UAH</IsoCurrencyCode>
+        <IsoCurrencySymbol>980</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>UKRAINE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Lari</CurrencyName>
+        <IsoCurrencyCode>GEL</IsoCurrencyCode>
+        <IsoCurrencySymbol>981</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>GEORGIA</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Mvdol</CurrencyName>
+        <IsoCurrencyCode>BOV</IsoCurrencyCode>
+        <IsoCurrencySymbol>984</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>BOLIVIA (PLURINATIONAL STATE OF)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Zloty</CurrencyName>
+        <IsoCurrencyCode>PLN</IsoCurrencyCode>
+        <IsoCurrencySymbol>985</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>POLAND</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Brazilian Real</CurrencyName>
+        <IsoCurrencyCode>BRL</IsoCurrencyCode>
+        <IsoCurrencySymbol>986</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>BRAZIL</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Unidad de Fomento</CurrencyName>
+        <IsoCurrencyCode>CLF</IsoCurrencyCode>
+        <IsoCurrencySymbol>990</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>CHILE</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>Sucre</CurrencyName>
+        <IsoCurrencyCode>XSU</IsoCurrencyCode>
+        <IsoCurrencySymbol>994</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>SISTEMA UNITARIO DE COMPENSACION REGIONAL DE PAGOS "SUCRE"</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>US Dollar (Next day)</CurrencyName>
+        <IsoCurrencyCode>USN</IsoCurrencyCode>
+        <IsoCurrencySymbol>997</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>UNITED STATES OF AMERICA (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>US Dollar (Same day)</CurrencyName>
+        <IsoCurrencyCode>USS</IsoCurrencyCode>
+        <IsoCurrencySymbol>998</IsoCurrencySymbol>
+        <IsFund>true</IsFund>
+        <CountryNames>
+            <CountryName>UNITED STATES OF AMERICA (THE)</CountryName>
+        </CountryNames>
+    </Currency>
+    <Currency>
+        <CurrencyName>The codes assigned for transactions where no currency is involved</CurrencyName>
+        <IsoCurrencyCode>XXX</IsoCurrencyCode>
+        <IsoCurrencySymbol>999</IsoCurrencySymbol>
+        <CountryNames>
+            <CountryName>ZZ07_No_Currency</CountryName>
+        </CountryNames>
+    </Currency>
+</Currencies>
